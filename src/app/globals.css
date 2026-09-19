@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-gold: #C5A059;
+    --color-gold-light: #E2CA8E;
+    --color-gold-dark: #9A7B39;
+    --color-luxury-black: #0A0A0A;
+    --color-editorial-white: #F7F7F5;
+    --color-border-subtle: #E8E8E4;
+  }
+
+  * {
+    border-color: var(--color-border-subtle);
+  }
+
+  body {
+    background-color: #FFFFFF;
+    color: #0A0A0A;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+/* Tipografia Editorial */
+.font-editorial {
+  font-family: "Didot", "Bodoni MT", "Playfair Display", "Georgia", serif;
+  letter-spacing: -0.02em;
+}
+
+.font-sans-clean {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Efeito Dourado Sutil de Luxo */
+.text-gold-accent {
+  color: #C5A059;
+}
+
+.bg-gold-accent {
+  background-color: #C5A059;
+}
+
+.border-gold-accent {
+  border-color: #C5A059;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #DFCA9B 0%, #C5A059 50%, #9A7B39 100%);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #E6D2A8 0%, #C5A059 60%, #9A7B39 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Microinterações e Animações Suaves */
+.transition-luxury {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scrollbar ultra-fina */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F7F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9A7B39;
+}
+
+/* Esconder barra de rolagem em elementos com scroll horizontal mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
