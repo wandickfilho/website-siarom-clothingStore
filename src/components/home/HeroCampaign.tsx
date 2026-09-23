@@ -1,83 +1,46 @@
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight, MapPin, Sparkles } from 'lucide-react';
 
 export default function HeroCampaign() {
   return (
-    <section className="relative w-full h-[75vh] min-h-[520px] max-h-[760px] bg-neutral-950 overflow-hidden flex items-center">
-      {/* Imagem de Fundo de Alta Resolução de Campanha de Moda */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=90"
-          alt="SIAROM MULTIMARCAS - Campanha de Moda 2026"
-          fill
-          priority
-          className="object-cover object-center scale-100 filter brightness-85"
-        />
-        {/* Gradiente sofisticado para garantir contraste sem escurecer a foto em excesso */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
-      </div>
-
-      {/* Conteúdo Editorial */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="max-w-xl text-white space-y-4 sm:space-y-6">
-          
-          {/* Eyebrow de Lançamento */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#E5C07B] text-[11px] font-bold uppercase tracking-[0.2em]">
-            <Sparkles className="w-3.5 h-3.5 text-[#E5C07B]" />
-            Nova Coleção • Edição 2026
+    <section className="relative isolate overflow-hidden bg-[#11100f] text-white">
+      <div className="mx-auto grid min-h-[680px] max-w-[1500px] lg:grid-cols-[0.92fr_1.08fr]">
+        <div className="relative z-10 flex items-center px-5 py-16 sm:px-10 lg:px-16 lg:py-24">
+          <div className="max-w-xl">
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-[10px] font-bold uppercase tracking-[.24em] text-[#e6c77b] backdrop-blur">
+              <Sparkles className="h-3.5 w-3.5" /> Novidades toda semana
+            </div>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[.32em] text-white/55">SIAROM / Sousa — PB</p>
+            <h1 className="font-editorial text-[clamp(3.5rem,8vw,7.5rem)] leading-[.82] tracking-[-.055em]">
+              Vista o que<br/><span className="italic text-[#e6c77b]">marca.</span>
+            </h1>
+            <p className="mt-8 max-w-md text-sm leading-7 text-white/65 sm:text-base">
+              Curadoria multimarcas para quem transforma presença em estilo. Peças atuais, combinações fortes e atendimento de perto.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Link href="/loja" className="group inline-flex items-center gap-3 rounded-full bg-[#e6c77b] px-7 py-4 text-xs font-extrabold uppercase tracking-[.16em] text-black transition hover:bg-white">
+                Comprar agora <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+              <Link href="/loja?filtro=novidades" className="inline-flex items-center rounded-full border border-white/25 px-7 py-4 text-xs font-bold uppercase tracking-[.16em] transition hover:border-white hover:bg-white hover:text-black">
+                Ver novidades
+              </Link>
+            </div>
+            <div className="mt-12 flex items-center gap-2 text-xs text-white/45">
+              <MapPin className="h-4 w-4 text-[#e6c77b]" /> Rua Herotildes Serafim dos Santos, 616
+            </div>
           </div>
+        </div>
 
-          {/* Headline Editorial de Moda */}
-          <h1 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] tracking-tight">
-            A elegância silenciosa do <span className="italic font-light text-[#E5C07B]">luxo contemporâneo</span>.
-          </h1>
-
-          {/* Texto de Apoio */}
-          <p className="text-sm sm:text-base text-neutral-300 font-normal leading-relaxed max-w-md">
-            Uma curadoria impecável das marcas mais desejadas do Brasil e do mundo, reunidas com exclusividade para você em Sousa - PB.
-          </p>
-
-          {/* CTAs Elegantes */}
-          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-            <Link
-              href="/loja"
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-white text-black text-xs sm:text-sm font-bold tracking-[0.15em] uppercase hover:bg-[#C5A059] hover:text-white transition-all shadow-lg active:scale-[0.98]"
-            >
-              <span>CONFIRA A COLEÇÃO</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-
-            <Link
-              href="/marcas"
-              className="inline-flex items-center justify-center px-6 py-3.5 bg-transparent border border-white/40 text-white text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase hover:bg-white/10 hover:border-white transition-colors backdrop-blur-xs"
-            >
-              CONHECER MARCAS
-            </Link>
-          </div>
-
-          {/* Tagline e Prova Social Discreta */}
-          <div className="pt-4 border-t border-white/15 flex items-center gap-6 text-[11px] text-neutral-300">
-            <div>
-              <strong className="block text-white font-bold text-sm tracking-tight">+10 Marcas</strong>
-              Curadoria Premium
-            </div>
-            <div className="w-px h-8 bg-white/20" />
-            <div>
-              <strong className="block text-white font-bold text-sm tracking-tight">Sousa - PB</strong>
-              Loja Física & Online
-            </div>
-            <div className="w-px h-8 bg-white/20" />
-            <div>
-              <strong className="block text-[#E5C07B] font-bold text-sm tracking-tight">Semanal</strong>
-              Novidades na Loja
-            </div>
+        <div className="relative min-h-[520px] lg:min-h-full">
+          <Image src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1600&q=90" alt="Editorial de moda SIAROM" fill priority className="object-cover" sizes="(max-width: 1024px) 100vw, 55vw" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#11100f]/50 via-transparent to-transparent lg:from-[#11100f]/25" />
+          <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between rounded-3xl border border-white/20 bg-black/25 p-5 backdrop-blur-md sm:bottom-9 sm:left-9 sm:right-9">
+            <div><p className="text-[10px] font-bold uppercase tracking-[.24em] text-[#e6c77b]">Drop 09/26</p><p className="mt-1 text-lg font-semibold">Nova seleção disponível</p></div>
+            <Link href="/loja" className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-black transition hover:scale-105"><ArrowUpRight className="h-5 w-5" /></Link>
           </div>
         </div>
       </div>
     </section>
   );
 }
-

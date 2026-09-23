@@ -1,90 +1,19 @@
 @import "tailwindcss";
 
 @layer base {
-  :root {
-    --color-gold: #C5A059;
-    --color-gold-light: #E2CA8E;
-    --color-gold-dark: #9A7B39;
-    --color-luxury-black: #0A0A0A;
-    --color-editorial-white: #F7F7F5;
-    --color-border-subtle: #E8E8E4;
-  }
-
-  * {
-    border-color: var(--color-border-subtle);
-  }
-
-  body {
-    background-color: #FFFFFF;
-    color: #0A0A0A;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-  }
+  :root { --gold:#d6b35f; --ink:#151310; --cream:#f4f0e8; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#fff; color:var(--ink); font-family:"Plus Jakarta Sans",Arial,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  ::selection { background:#d6b35f; color:#111; }
 }
-
-/* Tipografia Editorial */
-.font-editorial {
-  font-family: "Didot", "Bodoni MT", "Playfair Display", "Georgia", serif;
-  letter-spacing: -0.02em;
-}
-
-.font-sans-clean {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  letter-spacing: -0.01em;
-}
-
-/* Efeito Dourado Sutil de Luxo */
-.text-gold-accent {
-  color: #C5A059;
-}
-
-.bg-gold-accent {
-  background-color: #C5A059;
-}
-
-.border-gold-accent {
-  border-color: #C5A059;
-}
-
-.gold-gradient {
-  background: linear-gradient(135deg, #DFCA9B 0%, #C5A059 50%, #9A7B39 100%);
-}
-
-.gold-gradient-text {
-  background: linear-gradient(135deg, #E6D2A8 0%, #C5A059 60%, #9A7B39 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Microinterações e Animações Suaves */
-.transition-luxury {
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Scrollbar ultra-fina */
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-::-webkit-scrollbar-track {
-  background: #F7F7F5;
-}
-::-webkit-scrollbar-thumb {
-  background: #C5A059;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #9A7B39;
-}
-
-/* Esconder barra de rolagem em elementos com scroll horizontal mobile */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
+.font-editorial { font-family:"Playfair Display",Georgia,serif; }
+.font-sans-clean { font-family:"Plus Jakarta Sans",Arial,sans-serif; }
+.text-gold-accent { color:var(--gold); }.bg-gold-accent{background:var(--gold)}.border-gold-accent{border-color:var(--gold)}
+.gold-gradient{background:linear-gradient(135deg,#f0d894,#d6b35f 55%,#9a7630)}
+.gold-gradient-text{background:linear-gradient(135deg,#e9d18c,#c99f40);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.transition-luxury{transition:all .35s cubic-bezier(.16,1,.3,1)}
+.section-kicker{margin-bottom:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.25em;color:#9a7630}
+.section-title{font-family:"Playfair Display",Georgia,serif;font-size:clamp(2.2rem,5vw,4rem);line-height:1;letter-spacing:-.04em}
+.link-arrow{display:inline-flex;align-items:center;gap:.45rem;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;transition:.25s}.link-arrow:hover{opacity:.55}
+::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:#eeeae2}::-webkit-scrollbar-thumb{background:#b79a55;border-radius:10px}
+.no-scrollbar::-webkit-scrollbar{display:none}.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}

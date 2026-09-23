@@ -267,13 +267,23 @@ export default function CheckoutPage() {
                           WhatsApp / Telefone *
                         </label>
                         <input
-                          type="text"
-                          required
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="(83) 99999-9999"
-                          className="w-full px-3 py-2 text-xs border border-neutral-300 rounded focus:border-black focus:outline-none"
-                        />
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => {
+                          let value = e.target.value.replace(/\D/g, "").slice(0, 11);
+
+                          value = value
+                            .replace(/^(\d{2})(\d)/, "($1) $2")
+                            .replace(/(\d{5})(\d)/, "$1-$2");
+
+                          setFormData({ ...formData, phone: value });
+                        }}
+                        maxLength={15}
+                        inputMode="numeric"
+                        placeholder="(83) 99999-9999"
+                        className="w-full px-3 py-2 text-xs border border-neutral-300 rounded focus:border-black focus:outline-none"
+                      />
                       </div>
 
                       <div>
@@ -297,7 +307,18 @@ export default function CheckoutPage() {
                         <input
                           type="text"
                           value={formData.cpf}
-                          onChange={(e) => setFormData({ ...formData, cpf: e.target.value })}
+                          onChange={(e) => {
+                            let value = e.target.value.replace(/\D/g, "").slice(0, 11);
+
+                            value = value
+                              .replace(/(\d{3})(\d)/, "$1.$2")
+                              .replace(/(\d{3})(\d)/, "$1.$2")
+                              .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+                            setFormData({ ...formData, cpf: value });
+                          }}
+                          maxLength={14}
+                          inputMode="numeric"
                           placeholder="000.000.000-00"
                           className="w-full px-3 py-2 text-xs border border-neutral-300 rounded focus:border-black focus:outline-none"
                         />

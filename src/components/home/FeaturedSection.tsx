@@ -1,71 +1,26 @@
-import React from 'react';
 import Link from 'next/link';
 import { PRODUCTS } from '@/data/products';
 import ProductCard from '../product/ProductCard';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, BadgePercent } from 'lucide-react';
 
 export default function FeaturedSection() {
-  // Pegamos os primeiros 8 produtos para o grid de novidades e destaques
-  const newProducts = PRODUCTS.slice(0, 8);
-
   return (
-    <section className="py-12 sm:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header da Seção */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12">
-          <div className="space-y-1">
-            <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-[#C5A059]">
-              <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
-              Novidades da Semana
-            </div>
-            <h2 className="font-editorial text-3xl sm:text-4xl text-neutral-900 font-normal">
-              Lançamentos & Destaques
-            </h2>
-            <p className="text-xs sm:text-sm text-neutral-500 max-w-md pt-1">
-              As últimas novidades que acabaram de desembarcar na nossa loja física em Sousa - PB e agora disponíveis online.
-            </p>
+    <section className="bg-white py-20 sm:py-28">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-8">
+        <div className="mb-10 flex items-end justify-between gap-5">
+          <div><p className="section-kicker">Acabou de chegar</p><h2 className="section-title">Novos desejos.</h2></div>
+          <Link href="/loja" className="link-arrow hidden sm:inline-flex">Ver catálogo <ArrowRight className="h-4 w-4" /></Link>
+        </div>
+        <div className="grid grid-cols-2 gap-x-3 gap-y-8 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-12">
+          {PRODUCTS.slice(0, 8).map((product, idx) => <ProductCard key={product.id} product={product} priority={idx < 4} />)}
+        </div>
+        <div className="mt-16 overflow-hidden rounded-[2rem] bg-[#171512] text-white">
+          <div className="grid md:grid-cols-[1fr_auto] md:items-center">
+            <div className="p-7 sm:p-10"><div className="mb-3 flex items-center gap-2 text-[#e6c77b]"><BadgePercent className="h-4 w-4"/><span className="text-[10px] font-bold uppercase tracking-[.24em]">Boas-vindas SIAROM</span></div><h3 className="font-editorial text-3xl sm:text-4xl">10% OFF na primeira compra.</h3><p className="mt-2 text-sm text-white/55">Use <strong className="text-white">SIAROM10</strong> no checkout.</p></div>
+            <Link href="/loja" className="m-5 flex items-center justify-center rounded-full bg-[#e6c77b] px-8 py-4 text-xs font-extrabold uppercase tracking-[.16em] text-black transition hover:bg-white md:m-10">Quero aproveitar</Link>
           </div>
-
-          <Link
-            href="/loja"
-            className="inline-flex items-center gap-2 text-xs font-bold tracking-wider uppercase text-neutral-900 hover:text-[#C5A059] transition-colors mt-4 sm:mt-0 group"
-          >
-            <span>Ver Todo o Catálogo</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
         </div>
-
-        {/* Grid de Produtos: 2 colunas no mobile, 3 no tablet, 4 no desktop */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
-          {newProducts.map((product, idx) => (
-            <ProductCard key={product.id} product={product} priority={idx < 4} />
-          ))}
-        </div>
-
-        {/* Banner de CTA Intermediário */}
-        <div className="mt-14 p-6 sm:p-10 bg-[#F7F7F5] border border-neutral-200/80 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-1.5 text-center md:text-left">
-            <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A059]">
-              Vantagem Exclusiva
-            </span>
-            <h3 className="text-lg sm:text-xl font-bold text-neutral-900">
-              Ganhe 10% OFF na sua primeira compra online
-            </h3>
-            <p className="text-xs text-neutral-600">
-              Utilize o cupom <strong className="text-black bg-white px-2 py-0.5 border border-neutral-300 font-mono">SIAROM10</strong> no checkout e receba em qualquer lugar do Brasil.
-            </p>
-          </div>
-          <Link
-            href="/loja"
-            className="px-6 py-3 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors whitespace-nowrap"
-          >
-            Aproveitar Cupom
-          </Link>
-        </div>
-
       </div>
     </section>
   );
 }
-
