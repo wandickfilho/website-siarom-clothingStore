@@ -25,7 +25,6 @@ export default function CheckoutPage() {
 
   // Etapa do Checkout (1: Identificação & Endereço, 2: Pagamento, 3: Concluído)
   const [step, setStep] = useState<1 | 2 | 3>(1);
-
   // Dados do Cliente & Entrega
   const [formData, setFormData] = useState({
     name: '',
@@ -95,7 +94,7 @@ export default function CheckoutPage() {
   if (cart.length === 0 && step !== 3) {
     return (
       <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4 text-center">
-        <BrandLogo variant="light" size="md" className="mb-6" />
+        <BrandLogo variant="dark" size="md" className="mb-6" />
         <h2 className="text-xl font-bold text-neutral-900 mb-2">
           Sua sacola está vazia
         </h2>
@@ -118,7 +117,7 @@ export default function CheckoutPage() {
       <header className="bg-white border-b border-neutral-200 py-3.5 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <Link href="/" className="inline-flex items-center gap-2">
-            <BrandLogo variant="light" size="sm" />
+            <BrandLogo variant="dark" size="sm" wordmarkTailOnly />
           </Link>
 
           <div className="flex items-center gap-2 text-xs text-neutral-600 font-medium">
@@ -574,9 +573,15 @@ export default function CheckoutPage() {
                           </label>
                           <input
                             type="text"
+                            inputMode="numeric"
+                            autoComplete="cc-number"
                             placeholder="0000 0000 0000 0000"
+                            maxLength={16}
                             value={cardData.number}
-                            onChange={(e) => setCardData({ ...cardData, number: e.target.value })}
+                            onChange={(e) => {
+                              const digits = e.target.value.replace(/\D/g, '').slice(0, 16);
+                              setCardData({ ...cardData, number: digits });
+                            }}
                             className="w-full px-3 py-2 text-xs border border-neutral-300 rounded focus:border-black focus:outline-none"
                           />
                         </div>
@@ -601,9 +606,18 @@ export default function CheckoutPage() {
                             </label>
                             <input
                               type="text"
+                              inputMode="numeric"
+                              autoComplete="cc-exp"
                               placeholder="MM/AA"
+                              maxLength={5}
                               value={cardData.expiry}
-                              onChange={(e) => setCardData({ ...cardData, expiry: e.target.value })}
+                              onChange={(e) => {
+                                const digits = e.target.value.replace(/\D/g, '').slice(0, 4);
+                                setCardData({
+                                  ...cardData,
+                                  expiry: digits.length > 2 ? `${digits.slice(0, 2)}/${digits.slice(2)}` : digits,
+                                });
+                              }}
                               className="w-full px-3 py-2 text-xs border border-neutral-300 rounded focus:border-black focus:outline-none"
                             />
                           </div>

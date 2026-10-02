@@ -49,7 +49,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
 
   return (
     <div
-      className="group relative flex flex-col w-full bg-white transition-all duration-300"
+      className="group relative flex flex-col w-full bg-transparent transition-all duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -138,7 +138,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         {/* Nome do Produto */}
         <Link
           href={`/produto/${product.slug}`}
-          className="mt-1 text-xs sm:text-sm font-medium text-neutral-900 hover:text-neutral-600 transition-colors line-clamp-1"
+          className="mt-1 text-xs sm:text-sm font-medium text-neutral-100 hover:text-[#d6b35f] transition-colors line-clamp-1"
           title={product.name}
         >
           {product.name}
@@ -147,7 +147,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         {/* Preços e Condições */}
         <div className="mt-1.5 flex flex-col">
           <div className="flex items-baseline gap-2">
-            <span className="text-sm sm:text-base font-bold text-neutral-900 tracking-tight">
+            <span className="text-sm sm:text-base font-bold text-white tracking-tight">
               {formatCurrency(product.price)}
             </span>
             {product.originalPrice && (
@@ -169,7 +169,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         </div>
 
         {/* Botão de Adição Rápida no Mobile (Compacto e Acessível) */}
-        <div className="lg:hidden mt-2 pt-2 border-t border-neutral-100">
+          <div className="lg:hidden mt-2 pt-2 border-t border-neutral-800">
           <button
             onClick={handleQuickAdd}
             className="w-full py-1.5 px-2 bg-neutral-900 text-white rounded text-[11px] font-semibold tracking-wide uppercase flex items-center justify-center gap-1 active:bg-black"

@@ -11,7 +11,7 @@ export default function AboutPage() {
         
         {/* Header Editorial */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <BrandLogo variant="light" size="lg" className="mx-auto mb-4" />
+          <BrandLogo variant="dark" size="lg" className="mx-auto mb-4" />
           <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#C5A059]">
             <Sparkles className="w-4 h-4 text-[#C5A059]" />
             Nossa História & Posicionamento

@@ -65,7 +65,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-white/98 backdrop-blur-lg animate-in fade-in duration-200">
+    <div className="internal-page-shell fixed inset-0 z-50 flex flex-col bg-[#090909]/98 backdrop-blur-lg animate-in fade-in duration-200">
       {/* Header da Busca */}
       <div className="border-b border-neutral-200 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex items-center gap-3">
@@ -178,7 +178,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 <Link
                   href={`/loja?q=${encodeURIComponent(query)}`}
                   onClick={onClose}
-                  className="text-xs font-bold text-black hover:text-[#C5A059] flex items-center gap-1"
+                  className="text-xs font-bold text-white hover:text-[#C5A059] flex items-center gap-1"
                 >
                   Ver todos no catálogo <ArrowRight className="w-3.5 h-3.5" />
                 </Link>

@@ -1,19 +1,40 @@
 @import "tailwindcss";
 
-@layer base {
-  :root { --gold:#d6b35f; --ink:#151310; --cream:#f4f0e8; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:#fff; color:var(--ink); font-family:"Plus Jakarta Sans",Arial,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
-  ::selection { background:#d6b35f; color:#111; }
+@font-face {
+  font-family: "Bodoni 72";
+  src: url("/fonts/Bodoni.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
-.font-editorial { font-family:"Playfair Display",Georgia,serif; }
+
+@layer base {
+  :root { --gold:#d6b35f; --ink:#f7f4ed; --cream:#161513; --surface:#0a0a0a; --surface-raised:#151515; --line:#2b2925; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--surface); color:var(--ink); font-family:"Plus Jakarta Sans",Arial,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  ::selection { background:#d6b35f; color:#0a0a0a; }
+}
+.font-editorial { font-family:"Bodoni 72",Georgia,serif; font-weight:700; }
 .font-sans-clean { font-family:"Plus Jakarta Sans",Arial,sans-serif; }
 .text-gold-accent { color:var(--gold); }.bg-gold-accent{background:var(--gold)}.border-gold-accent{border-color:var(--gold)}
 .gold-gradient{background:linear-gradient(135deg,#f0d894,#d6b35f 55%,#9a7630)}
 .gold-gradient-text{background:linear-gradient(135deg,#e9d18c,#c99f40);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .transition-luxury{transition:all .35s cubic-bezier(.16,1,.3,1)}
-.section-kicker{margin-bottom:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.25em;color:#9a7630}
-.section-title{font-family:"Playfair Display",Georgia,serif;font-size:clamp(2.2rem,5vw,4rem);line-height:1;letter-spacing:-.04em}
+.section-kicker{margin-bottom:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.25em;color:#d6b35f}
+.section-title{font-family:"Bodoni 72",Georgia,serif;font-weight:700;font-size:clamp(2.2rem,5vw,4rem);line-height:1;letter-spacing:-.04em}
 .link-arrow{display:inline-flex;align-items:center;gap:.45rem;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;transition:.25s}.link-arrow:hover{opacity:.55}
-::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:#eeeae2}::-webkit-scrollbar-thumb{background:#b79a55;border-radius:10px}
+::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:#151515}::-webkit-scrollbar-thumb{background:#b79a55;border-radius:10px}
 .no-scrollbar::-webkit-scrollbar{display:none}.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+
+.internal-page-shell{position:relative;isolation:isolate;min-height:100%;overflow:clip;background:#090909;color:#f7f4ed}
+.internal-page-atmosphere{position:absolute;inset:0;z-index:0;display:flex;justify-content:center;align-items:flex-start;padding-top:clamp(14rem,28vw,28rem);overflow:hidden;background:radial-gradient(ellipse 48% 26% at 50% 28%,rgba(214,179,95,.11),transparent 68%),radial-gradient(ellipse 55% 34% at 50% 35%,rgba(255,255,255,.055),transparent 72%)}
+.internal-page-atmosphere::before{position:absolute;content:"";width:clamp(20rem,52vw,52rem);height:clamp(20rem,52vw,52rem);border-radius:9999px;background:rgba(214,179,95,.12);filter:blur(100px);opacity:.32}
+.internal-page-atmosphere>span{position:relative;z-index:1;opacity:.055;filter:blur(.2px)}
+.internal-page-content{position:relative;z-index:1}
+.internal-page-shell .bg-white,.internal-page-shell [class*="bg-[#F7F7F5]"]{background-color:#141414!important}
+.internal-page-shell .bg-neutral-50,.internal-page-shell .bg-neutral-100{background-color:#1a1a1a!important}
+.internal-page-shell [class*="border-neutral-"],.internal-page-shell [class*="border-[#"]{border-color:#39352d!important}
+.internal-page-shell .text-neutral-900,.internal-page-shell .text-neutral-800{color:#f7f4ed!important}
+.internal-page-shell .text-neutral-700,.internal-page-shell .text-neutral-600{color:#c9c5bd!important}
+.internal-page-shell .text-neutral-500,.internal-page-shell .text-neutral-400{color:#9e9a91!important}
+@media (max-width:640px){.internal-page-atmosphere{padding-top:10rem;background:radial-gradient(ellipse 75% 20% at 50% 20%,rgba(214,179,95,.075),transparent 70%)}.internal-page-atmosphere::before{filter:blur(80px);opacity:.2}.internal-page-atmosphere>span{opacity:.035}}

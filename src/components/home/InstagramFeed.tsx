@@ -33,30 +33,30 @@ export default function InstagramFeed() {
   ];
 
   return (
-    <section className="py-14 sm:py-20 bg-white">
+    <section className="py-14 sm:py-20 bg-[#0A0A0A] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Cabeçalho com Prova Social e Identidade do Instagram Oficial */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 border-b border-neutral-100 pb-6 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 border-b border-neutral-800 pb-6 gap-6">
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#C5A059]">
               <InstagramIcon className="w-4 h-4 text-[#C5A059]" />
               Inspiração & Comunidade
             </div>
-            <h2 className="font-editorial text-3xl sm:text-4xl text-neutral-900 font-normal">
+            <h2 className="font-editorial text-3xl sm:text-4xl text-white">
               @siarom.multimarcas
             </h2>
             
             {/* Bio Oficial da Loja */}
-            <div className="pt-2 text-xs sm:text-sm text-neutral-600 space-y-1">
-              <p className="flex items-center gap-1.5 font-medium text-neutral-800">
+            <div className="pt-2 text-xs sm:text-sm text-neutral-400 space-y-1">
+              <p className="flex items-center gap-1.5 font-medium text-neutral-200">
                 <span className="text-amber-500">🏆</span> A loja que vai ficar na sua mente 🧠
               </p>
-              <p className="flex items-center gap-1.5 text-neutral-600">
+              <p className="flex items-center gap-1.5 text-neutral-400">
                 <MapPin className="w-3.5 h-3.5 text-[#C5A059]" />
                 Rua Herotildes Serafim dos Santos, 616 • Sousa - PB
               </p>
-              <p className="flex items-center gap-1.5 text-neutral-600">
+              <p className="flex items-center gap-1.5 text-neutral-400">
                 <Award className="w-3.5 h-3.5 text-amber-500" />
                 Novidades toda semana
               </p>
@@ -84,7 +84,7 @@ export default function InstagramFeed() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative aspect-square overflow-hidden bg-neutral-100 block"
+              className="group relative aspect-square overflow-hidden bg-neutral-900 block"
             >
               <Image
                 src={item.src}

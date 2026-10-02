@@ -6,6 +6,7 @@ import Header from '@/components/layout/Header';
 import BottomNav from '@/components/layout/BottomNav';
 import Footer from '@/components/layout/Footer';
 import CartDrawer from '@/components/cart/CartDrawer';
+import InternalPageShell from '@/components/layout/InternalPageShell';
 
 export const metadata: Metadata = {
   title: 'SIAROM MULTIMARCAS | Moda Contemporânea & Luxo em Sousa - PB',
@@ -43,11 +44,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-white text-neutral-900 antialiased font-sans-clean selection:bg-[#C5A059] selection:text-white">
+      <body className="min-h-screen flex flex-col bg-[#0A0A0A] text-[#F7F4ED] antialiased font-sans-clean selection:bg-[#C5A059] selection:text-black">
         <CartProvider>
           <WishlistProvider>
             {/* Header Desktop & Mobile */}
@@ -55,7 +56,7 @@ export default function RootLayout({
 
             {/* Conteúdo Principal com espaço para Bottom Nav no mobile */}
             <main className="flex-1 pb-16 lg:pb-0">
-              {children}
+              <InternalPageShell>{children}</InternalPageShell>
             </main>
 
             {/* Carrinho Lateral / Bottom Sheet */}

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Search, Heart, ShoppingBag, User, Menu, X, ChevronRight, Sparkles, MapPin } from 'lucide-react';
@@ -43,7 +44,7 @@ export default function Header() {
   return (
     <>
       {/* Top Banner de Confiança e Localização */}
-      <div className="bg-[#0A0A0A] text-neutral-300 text-xs py-1.5 px-4 border-b border-neutral-800 tracking-wider">
+      <div className="bg-[#050505] text-neutral-300 text-xs py-2 px-4 border-b border-white/10 tracking-wider">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-[11px] font-medium">
           <div className="flex items-center gap-2">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#C5A059] animate-pulse"></span>
@@ -77,8 +78,8 @@ export default function Header() {
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-200 py-2.5'
-            : 'bg-white border-b border-neutral-100 py-3.5'
+            ? 'bg-[#0A0A0A]/95 backdrop-blur-md shadow-xl shadow-black/30 border-b border-white/10 py-2.5'
+            : 'bg-[#0A0A0A] border-b border-white/10 py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,16 +89,29 @@ export default function Header() {
             <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
-                className="p-2 -ml-2 text-neutral-800 hover:text-black focus:outline-none"
+                className="p-2 -ml-2 text-neutral-200 hover:text-[#d6b35f] focus:outline-none"
                 aria-label="Abrir menu de navegação"
               >
                 <Menu className="w-6 h-6" />
               </button>
             </div>
 
-            {/* Brand Logo */}
+{/* Brand Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <BrandLogo variant="light" size="md" />
+              <Link
+                href="/"
+                aria-label="SIAROM Multimarcas - Início"
+                className="flex shrink-0 items-center justify-center"
+              >
+                <Image
+                  src="/imagens/logo_siarom_instagram_semFundo.png"
+                  alt="SIAROM Multimarcas"
+                  width={500}
+                  height={500}
+                  className="h-20 w-20 object-contain sm:h-24 sm:w-24"
+                  priority
+                />
+              </Link>
             </div>
 
             {/* Desktop Navigation Links */}
@@ -110,10 +124,10 @@ export default function Header() {
                     href={link.href}
                     className={`relative py-1 transition-colors ${
                       isActive
-                        ? 'text-black font-semibold'
+                        ? 'text-white font-semibold'
                         : link.highlight
                         ? 'text-[#C5A059] font-semibold hover:text-[#9A7B39]'
-                        : 'text-neutral-700 hover:text-black'
+                        : 'text-neutral-400 hover:text-white'
                     }`}
                   >
                     {link.label}
@@ -135,7 +149,7 @@ export default function Header() {
               {/* Search Trigger */}
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="flex items-center gap-2 p-2 text-neutral-700 hover:text-black transition-colors rounded-full hover:bg-neutral-100 focus:outline-none"
+                className="flex items-center gap-2 p-2 text-neutral-300 hover:text-white transition-colors rounded-full hover:bg-white/10 focus:outline-none"
                 aria-label="Buscar produtos"
                 title="Buscar produtos"
               >
@@ -148,13 +162,13 @@ export default function Header() {
               {/* Wishlist */}
               <Link
                 href="/favoritos"
-                className="relative p-2 text-neutral-700 hover:text-black transition-colors rounded-full hover:bg-neutral-100"
+                className="relative p-2 text-neutral-300 hover:text-white transition-colors rounded-full hover:bg-white/10"
                 aria-label="Favoritos"
                 title="Ver lista de desejos"
               >
                 <Heart className="w-5 h-5 stroke-[1.75]" />
                 {totalWishlist > 0 && (
-                  <span className="absolute top-1 right-1 w-4 h-4 bg-[#C5A059] text-white text-[10px] font-bold rounded-full flex items-center justify-center ring-2 ring-white">
+                  <span className="absolute top-1 right-1 w-4 h-4 bg-[#C5A059] text-black text-[10px] font-bold rounded-full flex items-center justify-center ring-2 ring-[#0A0A0A]">
                     {totalWishlist}
                   </span>
                 )}
@@ -163,7 +177,7 @@ export default function Header() {
               {/* Account (hidden on smallest screens to keep it clean) */}
               <Link
                 href="/conta"
-                className="hidden sm:flex p-2 text-neutral-700 hover:text-black transition-colors rounded-full hover:bg-neutral-100"
+                className="hidden sm:flex p-2 text-neutral-300 hover:text-white transition-colors rounded-full hover:bg-white/10"
                 aria-label="Minha Conta"
                 title="Minha Conta e Pedidos"
               >
@@ -173,7 +187,7 @@ export default function Header() {
               {/* Cart Button */}
               <button
                 onClick={openCart}
-                className="relative flex items-center gap-2 py-2 px-3 bg-neutral-900 text-white rounded-full hover:bg-black transition-all hover:scale-[1.02] shadow-sm focus:outline-none"
+                className="relative flex items-center gap-2 py-2 px-3 bg-[#1a1815] text-white rounded-full border border-[#514326] hover:bg-black transition-all hover:scale-[1.02] shadow-sm focus:outline-none"
                 aria-label="Sacola de compras"
               >
                 <ShoppingBag className="w-4 h-4 text-[#E5C07B]" />
@@ -194,13 +208,13 @@ export default function Header() {
             onClick={() => setIsMobileMenuOpen(false)}
           />
 
-          <div className="relative w-full max-w-xs bg-white h-full shadow-2xl flex flex-col z-10 animate-in slide-in-from-left duration-300">
+          <div className="relative w-full max-w-xs bg-[#111111] h-full shadow-2xl flex flex-col z-10 animate-in slide-in-from-left duration-300">
             {/* Mobile Menu Header */}
-            <div className="p-4 border-b border-neutral-100 flex items-center justify-between">
-              <BrandLogo variant="light" size="sm" />
+            <div className="p-4 border-b border-neutral-800 flex items-center justify-between">
+              <BrandLogo variant="dark" size="sm" symbolOnly />
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2 text-neutral-500 hover:text-black rounded-full"
+                className="p-2 text-neutral-400 hover:text-white rounded-full"
                 aria-label="Fechar menu"
               >
                 <X className="w-5 h-5" />
@@ -209,14 +223,14 @@ export default function Header() {
 
             {/* Mobile Nav Links */}
             <div className="flex-1 overflow-y-auto py-4 px-4 space-y-1">
-              <div className="text-[11px] font-bold uppercase tracking-widest text-neutral-400 mb-2 px-2">
+              <div className="text-[11px] font-bold uppercase tracking-widest text-neutral-500 mb-2 px-2">
                 Departamentos
               </div>
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="flex items-center justify-between py-3 px-3 rounded-lg text-sm font-medium text-neutral-800 hover:bg-neutral-50 hover:text-black transition-colors"
+                  className="flex items-center justify-between py-3 px-3 rounded-lg text-sm font-medium text-neutral-200 hover:bg-white/10 hover:text-white transition-colors"
                 >
                   <span className="flex items-center gap-2">
                     {link.label}
@@ -230,17 +244,17 @@ export default function Header() {
                         {link.badge}
                       </span>
                     )}
-                    <ChevronRight className="w-4 h-4 text-neutral-400" />
+                    <ChevronRight className="w-4 h-4 text-neutral-500" />
                   </div>
                 </Link>
               ))}
 
-              <div className="pt-6 border-t border-neutral-100 mt-6">
-                <div className="text-[11px] font-bold uppercase tracking-widest text-neutral-400 mb-2 px-2">
+              <div className="pt-6 border-t border-neutral-800 mt-6">
+                <div className="text-[11px] font-bold uppercase tracking-widest text-neutral-500 mb-2 px-2">
                   Atendimento & Loja Física
                 </div>
-                <div className="p-3 bg-neutral-50 rounded-xl space-y-2 text-xs text-neutral-600">
-                  <p className="font-semibold text-neutral-900 flex items-center gap-1.5">
+                <div className="p-3 bg-white/5 rounded-xl space-y-2 text-xs text-neutral-400">
+                  <p className="font-semibold text-white flex items-center gap-1.5">
                     <MapPin className="w-3.5 h-3.5 text-[#C5A059]" />
                     SIAROM MULTIMARCAS
                   </p>
@@ -259,10 +273,10 @@ export default function Header() {
             </div>
 
             {/* Mobile Menu Footer */}
-            <div className="p-4 border-t border-neutral-100 bg-neutral-50">
+            <div className="p-4 border-t border-neutral-800 bg-black/20">
               <Link
                 href="/conta"
-                className="flex items-center justify-center gap-2 w-full py-2.5 bg-black text-white text-xs font-semibold rounded-lg"
+                className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#d6b35f] text-black text-xs font-semibold rounded-lg"
               >
                 <User className="w-4 h-4" />
                 Minha Conta / Rastrear Pedidos

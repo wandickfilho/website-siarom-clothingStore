@@ -78,7 +78,7 @@ export default function Footer() {
           
           {/* Coluna 1: Marca & Endereço Oficial */}
           <div className="lg:col-span-2 space-y-4">
-            <BrandLogo variant="dark" size="md" />
+            <BrandLogo variant="dark" size="md" wordmarkTailOnly />
             <p className="text-xs text-neutral-400 max-w-sm leading-relaxed">
               SIAROM MULTIMARCAS — Moda contemporânea com curadoria impecável das marcas mais prestigiadas. A loja que vai ficar na sua mente.
             </p>

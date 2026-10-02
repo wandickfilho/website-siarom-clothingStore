@@ -25,7 +25,7 @@ export default function EditorialLookbook() {
             </div>
 
             {/* Tag Flutuante Editorial */}
-            <div className="absolute -bottom-4 -right-2 sm:bottom-6 sm:right-6 bg-white text-black p-4 sm:p-5 max-w-[220px] shadow-2xl">
+            <div className="absolute -bottom-4 -right-2 sm:bottom-6 sm:right-6 bg-[#171512] text-white border border-[#4a4029] p-4 sm:p-5 max-w-[220px] shadow-2xl">
               <span className="text-[9px] uppercase tracking-[0.25em] font-bold text-[#C5A059] block mb-0.5">
                 Lookbook 2026
               </span>
@@ -68,7 +68,7 @@ export default function EditorialLookbook() {
             <div className="pt-4">
               <Link
                 href="/loja?categoria=feminino"
-                className="inline-flex items-center gap-3 px-8 py-3.5 bg-white text-black text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C5A059] hover:text-white transition-all shadow-md active:scale-98"
+                className="inline-flex items-center gap-3 px-8 py-3.5 bg-[#d6b35f] text-black text-xs font-bold uppercase tracking-[0.2em] hover:bg-white transition-all shadow-md active:scale-98"
               >
                 <span>Explorar Campanha</span>
                 <ArrowRight className="w-4 h-4" />
