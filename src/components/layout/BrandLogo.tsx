@@ -40,16 +40,16 @@ export default function BrandLogo({
     <Link
       href="/"
       className={`group inline-flex items-center gap-2 leading-none sm:gap-2.5 ${className}`}
-      aria-label="SIAROM Multimarcas - Início"
+      aria-label="Mega Toys - Início"
     >
       <BrandSymbol variant={darkMode ? 'dark' : 'light'} size={size} />
       {!symbolOnly && (
         <span className="flex flex-col items-start">
-          <span className={`font-editorial tracking-[-.06em] ${currentSize.title} ${darkMode ? 'text-white' : 'text-[#151310]'}`}>
-            {wordmarkTailOnly ? 'IAROM' : 'SIAROM'}
+          <span className={`font-editorial tracking-[-.06em] ${currentSize.title} ${darkMode ? 'text-white' : 'text-[#051D6F]'}`}>
+            {wordmarkTailOnly ? 'EGA TOYS' : 'MEGA TOYS'}
           </span>
-          <span className={`mt-1 font-bold uppercase tracking-[.42em] ${currentSize.subtitle} ${darkMode ? 'text-[#d6b35f]' : 'text-[#8b7139]'}`}>
-            Multimarcas
+          <span className={`mt-1 font-bold uppercase tracking-[.42em] ${currentSize.subtitle} ${darkMode ? 'text-[#FBCC0F]' : 'text-[#EB1019]'}`}>
+            Brinquedos
           </span>
         </span>
       )}

@@ -38,7 +38,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   // Load from localStorage on mount
   useEffect(() => {
     try {
-      const saved = localStorage.getItem('siarom_cart');
+      const saved = localStorage.getItem('megatoys_cart');
       if (saved) {
         setCart(JSON.parse(saved));
       }
@@ -50,7 +50,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   // Save to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('siarom_cart', JSON.stringify(cart));
+      localStorage.setItem('megatoys_cart', JSON.stringify(cart));
     } catch (e) {
       console.error('Failed to save cart', e);
     }
@@ -134,7 +134,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const applyCoupon = (code: string): boolean => {
     const clean = code.trim().toUpperCase();
-    if (clean === 'SIAROM10' || clean === 'PRIMEIRACOMPRA') {
+    if (clean === 'MEGATOYS10' || clean === 'PRIMEIRACOMPRA') {
       setCouponCode(clean);
       setDiscountPercent(10);
       return true;

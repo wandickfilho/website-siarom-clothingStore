@@ -1,20 +1,21 @@
-# SIAROM MULTIMARCAS — Fashion E-Commerce de Alto Padrão (2026)
+# MEGA TOYS — Loja de Brinquedos Online (2026)
 
-E-commerce de moda e luxo contemporâneo desenvolvido com foco em experiência mobile-first, minimalismo editorial e alta conversão (CRO).
+E-commerce de brinquedos, jogos e presentes desenvolvido com foco em experiência mobile-first, visual alegre e alta conversão (CRO).
 
-## 📍 Identidade & Loja Física
-- **Marca:** SIAROM MULTIMARCAS
-- **Localização:** Rua Herotildes Serafim dos Santos, 616 — Sousa - PB
-- **Slogan Oficial:** *"A loja que vai ficar na sua mente 🧠"* • *"Novidades toda semana 🥇"*
-- **Paleta Oficial:** Preto Profundo (`#0A0A0A`), Branco Puro & Off-White Editorial (`#F7F7F5`), Acento Dourado da Coroa Real (`#C5A059`, `#E5C07B`).
+## Identidade & Loja
+- **Marca:** MEGA TOYS
+- **Instagram:** [@megatoys.sousa](https://www.instagram.com/megatoys.sousa)
+- **Localização:** Sousa - PB
+- **Público:** crianças, pais e famílias
+- **Paleta Oficial:** Azul (`#052A97`), Azul Marinho (`#051D6F`), Vermelho (`#EB1019`), Amarelo (`#FBCC0F`), Verde (`#04B02A`), Laranja (`#F2A018`), fundo Branco.
 
 ---
 
-## 🚀 Como Executar o Projeto
+## Como Executar o Projeto
 
 ```bash
-# Entrar no diretório isolado
-cd c:\Users\jorgy\Documents\CANDEX\siarom-multimarcas
+# Entrar no diretório do projeto
+cd website-megaToys
 
 # Iniciar o servidor de desenvolvimento
 npm run dev
@@ -23,19 +24,18 @@ npm run dev
 
 ---
 
-## 🌟 Principais Recursos Desenvolvidos
+## Principais Recursos
 
 1. **Mobile-First Nativo:**
    - Barra de navegação inferior permanente com acesso rápido: *Início*, *Coleções*, *Buscar*, *Desejos* e *Sacola*.
-   - Grade de 2 colunas com proporção áurea (3:4) e preços legíveis sem rolagem excessiva.
-   - Header mobile ultra limpo com logotipo oficial vetorizado e coroa dourada.
+   - Grade de 2 colunas com proporção 3:4 e preços legíveis sem rolagem excessiva.
+   - Header com logo oficial da Mega Toys.
 
-2. **Home Page Editorial:**
-   - Hero de campanha internacional de alta resolução.
+2. **Home Page:**
+   - Hero com vídeo institucional e campanhas em slider.
    - Vitrine de novidades com badges discretas de coleção e desconto.
-   - Seção editorial estilo revista de moda (*Lookbook 2026*).
-   - Apresentação refinada de multimarcas autorizadas (*Animale, Osklen, Reserva, Calvin Klein, Schutz, Dudalina*).
-   - Seção de Instagram oficial com fotos reais e endereço em Sousa - PB.
+   - Seção institucional "Conheça a Mega Toys" com foto da fachada.
+   - Apresentação de marcas e seção de Instagram oficial (@megatoys.sousa).
 
 3. **Catálogo & PLP (`/loja`):**
    - Filtros laterais no Desktop e drawer elegante no Mobile.
@@ -43,13 +43,21 @@ npm run dev
    - Busca preditiva instantânea em modal dedicado.
 
 4. **Página de Produto / PDP (`/produto/[slug]`):**
-   - Galeria de imagens em alta definição com zoom e miniaturas de ângulos alternativos.
+   - Galeria de imagens em alta definição com zoom e miniaturas.
    - Seletor visual de cores e tamanhos em tempo real.
-   - Modal interativo de **Guia de Medidas** (tabela em centímetros para roupas e calçados).
-   - Simulador de frete para Sousa - PB e todo o Brasil.
+   - Modal interativo de **Guia de Medidas**.
+   - Simulador de frete para todo o Brasil.
    - CTAs de alta conversão: *Adicionar à Sacola* e *Comprar Agora (1-Clique)*.
 
 5. **Carrinho & Checkout CRO (`/checkout`):**
    - Drawer lateral no desktop e bottom sheet no mobile com barra de progresso para frete grátis (R$ 499).
-   - Checkout sem distrações com suporte a **PIX instantâneo (com 5% OFF e QR code gerado)**, cartão de crédito parcelado em até 10x sem juros e finalização humanizada via WhatsApp da loja física.
+   - Checkout sem distrações com suporte a **PIX (com 5% OFF)**, cartão de crédito parcelado em até 10x sem juros e finalização humanizada via WhatsApp.
 
+---
+
+## Stack Técnica
+
+- **Framework:** Next.js 16 (App Router + Turbopack)
+- **UI:** React 19 + TypeScript + Tailwind CSS v4
+- **Ícones:** lucide-react
+- **Estado:** React Context (Carrinho + Favoritos com localStorage)

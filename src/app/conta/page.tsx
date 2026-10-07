@@ -55,8 +55,8 @@ export default function AccountPage() {
         {/* Header */}
         <div className="border-b border-neutral-100 pb-6 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#C5A059] mb-1">
-              <User className="w-4 h-4 text-[#C5A059]" />
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#052A97] mb-1">
+              <User className="w-4 h-4 text-[#052A97]" />
               Painel do Cliente
             </div>
             <h1 className="font-editorial text-3xl sm:text-4xl text-neutral-900 font-normal">
@@ -77,7 +77,7 @@ export default function AccountPage() {
         {/* Busca Rápida de Rastreio */}
         <div className="bg-[#F7F7F5] p-6 rounded-xl border border-neutral-200 mb-10">
           <h2 className="text-xs font-bold uppercase tracking-wider text-neutral-900 mb-2 flex items-center gap-2">
-            <Package className="w-4 h-4 text-[#C5A059]" />
+            <Package className="w-4 h-4 text-[#052A97]" />
             Rastrear Pedido pelo Código
           </h2>
           <form onSubmit={handleTrack} className="flex gap-2">
@@ -173,13 +173,13 @@ export default function AccountPage() {
                     <span className="text-neutral-400">•</span>
                     <span className="text-xs text-neutral-500">{order.date}</span>
                     <span className="text-neutral-400">•</span>
-                    <span className="text-xs font-semibold text-[#C5A059]">{order.status}</span>
+                    <span className="text-xs font-semibold text-[#052A97]">{order.status}</span>
                   </div>
                   <p className="text-xs text-neutral-700 font-medium">
                     {order.items}
                   </p>
                   <p className="text-[11px] text-neutral-400 flex items-center gap-1">
-                    <MapPin className="w-3 h-3 text-[#C5A059]" />
+                    <MapPin className="w-3 h-3 text-[#052A97]" />
                     {order.destination}
                   </p>
                 </div>
@@ -191,7 +191,7 @@ export default function AccountPage() {
                       setTrackingCode(order.id);
                       setTrackedOrder(order);
                     }}
-                    className="text-xs text-[#C5A059] hover:underline font-semibold"
+                    className="text-xs text-[#052A97] hover:underline font-semibold"
                   >
                     Ver detalhes →
                   </button>

@@ -17,7 +17,7 @@ export function WishlistProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     try {
-      const saved = localStorage.getItem('siarom_wishlist');
+      const saved = localStorage.getItem('megatoys_wishlist');
       if (saved) {
         setWishlist(JSON.parse(saved));
       }
@@ -28,7 +28,7 @@ export function WishlistProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     try {
-      localStorage.setItem('siarom_wishlist', JSON.stringify(wishlist));
+      localStorage.setItem('megatoys_wishlist', JSON.stringify(wishlist));
     } catch (e) {
       console.error('Failed to save wishlist', e);
     }

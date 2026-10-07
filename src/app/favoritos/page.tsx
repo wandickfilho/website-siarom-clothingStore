@@ -15,8 +15,8 @@ export default function WishlistPage() {
         
         {/* Header */}
         <div className="border-b border-neutral-100 pb-6 mb-8">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#C5A059] mb-1">
-            <Heart className="w-4 h-4 fill-[#C5A059]" />
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#052A97] mb-1">
+            <Heart className="w-4 h-4 fill-[#052A97]" />
             Lista de Desejos
           </div>
           <h1 className="font-editorial text-3xl sm:text-4xl text-neutral-900 font-normal">

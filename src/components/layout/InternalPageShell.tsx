@@ -13,7 +13,7 @@ export default function InternalPageShell({ children }: { children: React.ReactN
   return (
     <div className="internal-page-shell">
       <div className="internal-page-atmosphere" aria-hidden="true">
-        <BrandSymbol variant="dark" size="watermark" />
+        <BrandSymbol variant="light" size="watermark" />
       </div>
       <div className="internal-page-content">{children}</div>
     </div>

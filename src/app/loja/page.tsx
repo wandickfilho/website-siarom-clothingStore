@@ -112,8 +112,8 @@ function StoreContent() {
         <div className="border-b border-neutral-100 pb-6 mb-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#C5A059] block mb-1">
-                Curadoria SIAROM MULTIMARCAS
+              <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#052A97] block mb-1">
+                Curadoria MEGA TOYS
               </span>
               <h1 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-neutral-900 font-normal">
                 {getCategoryTitle()}
@@ -140,7 +140,7 @@ function StoreContent() {
             <SlidersHorizontal className="w-3.5 h-3.5" />
             <span>Filtros</span>
             {activeFiltersCount > 0 && (
-              <span className="w-4 h-4 rounded-full bg-[#C5A059] text-white text-[10px] flex items-center justify-center">
+              <span className="w-4 h-4 rounded-full bg-[#052A97] text-white text-[10px] flex items-center justify-center">
                 {activeFiltersCount}
               </span>
             )}
@@ -176,7 +176,7 @@ function StoreContent() {
               </span>
             )}
             {onlyDiscount && (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#C5A059]/15 text-[#9A7B39] font-medium rounded-full text-[11px]">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#052A97]/15 text-[#051D6F] font-medium rounded-full text-[11px]">
                 Apenas Ofertas
                 <button onClick={() => setOnlyDiscount(false)} className="hover:text-rose-500">
                   <X className="w-3 h-3" />
@@ -243,7 +243,7 @@ function StoreContent() {
                     >
                       <span>{item.label}</span>
                       {selectedCategory === item.value && (
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#052A97]" />
                       )}
                     </button>
                   </li>
@@ -264,7 +264,7 @@ function StoreContent() {
                   }`}
                 >
                   <span>Todas as Marcas</span>
-                  {selectedBrand === 'todas' && <Check className="w-3.5 h-3.5 text-[#C5A059]" />}
+                  {selectedBrand === 'todas' && <Check className="w-3.5 h-3.5 text-[#052A97]" />}
                 </button>
                 {BRANDS.map((brand) => (
                   <button
@@ -278,7 +278,7 @@ function StoreContent() {
                   >
                     <span>{brand.name}</span>
                     {selectedBrand.toLowerCase() === brand.name.toLowerCase() && (
-                      <Check className="w-3.5 h-3.5 text-[#C5A059]" />
+                      <Check className="w-3.5 h-3.5 text-[#052A97]" />
                     )}
                   </button>
                 ))}

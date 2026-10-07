@@ -33,7 +33,7 @@ export default function BottomNav() {
           >
             <Home className={`w-5 h-5 ${pathname === '/' ? 'stroke-[2.2] text-black' : 'stroke-[1.75]'}`} />
             <span className="text-[10px] tracking-tight mt-1">Início</span>
-            {pathname === '/' && <span className="w-1 h-1 rounded-full bg-[#C5A059] mt-0.5" />}
+            {pathname === '/' && <span className="w-1 h-1 rounded-full bg-[#EB1019] mt-0.5" />}
           </Link>
 
           {/* 2. Categorias / Catálogo */}
@@ -45,7 +45,7 @@ export default function BottomNav() {
           >
             <Grid className={`w-5 h-5 ${pathname.startsWith('/loja') ? 'stroke-[2.2] text-black' : 'stroke-[1.75]'}`} />
             <span className="text-[10px] tracking-tight mt-1">Coleções</span>
-            {pathname.startsWith('/loja') && <span className="w-1 h-1 rounded-full bg-[#C5A059] mt-0.5" />}
+            {pathname.startsWith('/loja') && <span className="w-1 h-1 rounded-full bg-[#EB1019] mt-0.5" />}
           </Link>
 
           {/* 3. Buscar (Central & Instantâneo) */}
@@ -70,7 +70,7 @@ export default function BottomNav() {
             <div className="relative">
               <Heart className={`w-5 h-5 ${pathname === '/favoritos' ? 'stroke-[2.2] text-black fill-black' : 'stroke-[1.75]'}`} />
               {totalWishlist > 0 && (
-                <span className="absolute -top-1 -right-2 bg-[#C5A059] text-white text-[9px] font-bold rounded-full w-3.5 h-3.5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-2 bg-[#EB1019] text-white text-[9px] font-bold rounded-full w-3.5 h-3.5 flex items-center justify-center">
                   {totalWishlist}
                 </span>
               )}

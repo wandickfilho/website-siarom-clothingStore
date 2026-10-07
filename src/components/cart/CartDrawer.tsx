@@ -76,11 +76,11 @@ export default function CartDrawer() {
             <div className="flex items-center justify-between text-xs mb-1.5">
               {amountToFreeShipping > 0 ? (
                 <span className="text-neutral-700">
-                  Faltam <strong className="text-neutral-900">{formatCurrency(amountToFreeShipping)}</strong> para <strong className="text-[#C5A059]">FRETE GRÁTIS</strong>
+                  Faltam <strong className="text-neutral-900">{formatCurrency(amountToFreeShipping)}</strong> para <strong className="text-[#052A97]">FRETE GRÁTIS</strong>
                 </span>
               ) : (
                 <span className="text-emerald-700 font-semibold flex items-center gap-1">
-                  <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
+                  <Sparkles className="w-3.5 h-3.5 text-[#052A97]" />
                   Parabéns! Você ganhou Frete Grátis
                 </span>
               )}
@@ -90,7 +90,7 @@ export default function CartDrawer() {
             </div>
             <div className="w-full h-1.5 bg-neutral-200 rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-[#C5A059] to-neutral-900 transition-all duration-500 rounded-full"
+                className="h-full bg-gradient-to-r from-[#052A97] to-neutral-900 transition-all duration-500 rounded-full"
                 style={{ width: `${freeShippingProgress}%` }}
               />
             </div>
@@ -139,7 +139,7 @@ export default function CartDrawer() {
                   <div className="flex flex-col justify-between flex-1 min-w-0">
                     <div>
                       <div className="flex items-start justify-between gap-2">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#C5A059]">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#052A97]">
                           {item.product.brand}
                         </span>
                         <button
@@ -235,7 +235,7 @@ export default function CartDrawer() {
                     type="text"
                     value={inputCoupon}
                     onChange={(e) => setInputCoupon(e.target.value)}
-                    placeholder="Cupom (ex: SIAROM10)"
+                    placeholder="Cupom (ex: MEGATOYS10)"
                     className="flex-1 px-3 py-1.5 text-xs bg-white border border-neutral-300 rounded focus:outline-none focus:border-black uppercase"
                   />
                   <button
@@ -247,7 +247,7 @@ export default function CartDrawer() {
                 </form>
               )}
               {couponError && (
-                <p className="text-[11px] text-rose-600">Cupom inválido. Tente &ldquo;SIAROM10&rdquo;.</p>
+                <p className="text-[11px] text-rose-600">Cupom inválido. Tente &ldquo;MEGATOYS10&rdquo;.</p>
               )}
 
               {/* Linhas de Resumo */}
@@ -289,7 +289,7 @@ export default function CartDrawer() {
               </Link>
 
               <div className="flex items-center justify-center gap-1.5 text-[11px] text-neutral-400 pt-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#C5A059]" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#052A97]" />
                 <span>Compra 100% Segura • Loja Física em Sousa-PB</span>
               </div>
             </div>

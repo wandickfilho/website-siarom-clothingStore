@@ -85,7 +85,7 @@ export default function ProductDetailPage() {
             {product.category}
           </Link>
           <span>/</span>
-          <span className="text-[#C5A059] font-semibold">{product.brand}</span>
+          <span className="text-[#052A97] font-semibold">{product.brand}</span>
           <span className="hidden sm:inline">/</span>
           <span className="hidden sm:inline text-neutral-900 truncate max-w-xs">{product.name}</span>
         </nav>
@@ -114,7 +114,7 @@ export default function ProductDetailPage() {
                   </span>
                 )}
                 {discountPercent > 0 && (
-                  <span className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest bg-[#C5A059] text-white">
+                  <span className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest bg-[#052A97] text-white">
                     -{discountPercent}% OFF
                   </span>
                 )}
@@ -125,14 +125,14 @@ export default function ProductDetailPage() {
                 onClick={() => toggleWishlist(product)}
                 className={`absolute top-4 right-4 p-3 rounded-full shadow-md transition-transform active:scale-90 ${
                   isFavorited
-                    ? 'bg-black text-[#C5A059]'
+                    ? 'bg-black text-[#052A97]'
                     : 'bg-white/90 backdrop-blur-xs text-neutral-700 hover:text-black'
                 }`}
                 aria-label="Adicionar aos favoritos"
               >
                 <Heart
                   className={`w-5 h-5 ${
-                    isFavorited ? 'fill-[#C5A059] text-[#C5A059]' : 'stroke-[1.8]'
+                    isFavorited ? 'fill-[#052A97] text-[#052A97]' : 'stroke-[1.8]'
                   }`}
                 />
               </button>
@@ -147,7 +147,7 @@ export default function ProductDetailPage() {
                     onClick={() => setSelectedImageIndex(index)}
                     className={`relative w-20 h-24 sm:w-24 sm:h-28 flex-shrink-0 bg-neutral-100 overflow-hidden border-2 transition-all ${
                       selectedImageIndex === index
-                        ? 'border-[#C5A059] opacity-100'
+                        ? 'border-[#052A97] opacity-100'
                         : 'border-transparent opacity-60 hover:opacity-100'
                     }`}
                   >
@@ -171,7 +171,7 @@ export default function ProductDetailPage() {
               <div className="flex items-center justify-between mb-1">
                 <Link
                   href={`/loja?marca=${encodeURIComponent(product.brand)}`}
-                  className="text-xs font-bold uppercase tracking-[0.2em] text-[#C5A059] hover:underline"
+                  className="text-xs font-bold uppercase tracking-[0.2em] text-[#052A97] hover:underline"
                 >
                   {product.brand}
                 </Link>
@@ -253,7 +253,7 @@ export default function ProductDetailPage() {
 
                 <button
                   onClick={() => setIsSizeGuideOpen(true)}
-                  className="flex items-center gap-1 text-[#C5A059] hover:text-[#9A7B39] font-semibold transition-colors"
+                  className="flex items-center gap-1 text-[#052A97] hover:text-[#051D6F] font-semibold transition-colors"
                 >
                   <Ruler className="w-3.5 h-3.5" />
                   <span>Tabela de Medidas (cm)</span>
@@ -296,7 +296,7 @@ export default function ProductDetailPage() {
                   </>
                 ) : (
                   <>
-                    <ShoppingBag className="w-5 h-5 text-[#E5C07B]" />
+                    <ShoppingBag className="w-5 h-5 text-[#052A97]" />
                     <span>ADICIONAR À SACOLA</span>
                   </>
                 )}
@@ -304,7 +304,7 @@ export default function ProductDetailPage() {
 
               <button
                 onClick={handleBuyNow}
-                className="w-full py-3.5 px-6 bg-[#C5A059] hover:bg-[#9A7B39] text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] flex items-center justify-center gap-2 transition-all shadow-sm active:scale-[0.99]"
+                className="w-full py-3.5 px-6 bg-[#052A97] hover:bg-[#051D6F] text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] flex items-center justify-center gap-2 transition-all shadow-sm active:scale-[0.99]"
               >
                 <span>COMPRAR AGORA (1-CLIQUE)</span>
               </button>
@@ -314,7 +314,7 @@ export default function ProductDetailPage() {
             <div className="pt-4 border-t border-neutral-100">
               <form onSubmit={handleCalculateShipping} className="space-y-2">
                 <label className="text-xs font-bold uppercase tracking-wider text-neutral-800 flex items-center gap-1.5">
-                  <Truck className="w-4 h-4 text-[#C5A059]" />
+                  <Truck className="w-4 h-4 text-[#052A97]" />
                   Calcular Frete e Prazo
                 </label>
                 <div className="flex gap-2">
@@ -368,19 +368,19 @@ export default function ProductDetailPage() {
               {/* Selos de Confiança */}
               <div className="grid grid-cols-2 gap-3 pt-3 border-t border-neutral-100 text-[11px] text-neutral-600">
                 <div className="flex items-center gap-2">
-                  <RefreshCw className="w-4 h-4 text-[#C5A059]" />
+                  <RefreshCw className="w-4 h-4 text-[#052A97]" />
                   <span>Troca fácil em até 7 dias</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-[#C5A059]" />
+                  <ShieldCheck className="w-4 h-4 text-[#052A97]" />
                   <span>Produto 100% Original</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CreditCard className="w-4 h-4 text-[#C5A059]" />
+                  <CreditCard className="w-4 h-4 text-[#052A97]" />
                   <span>Até 10x sem juros no cartão</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-[#C5A059]" />
+                  <Sparkles className="w-4 h-4 text-[#052A97]" />
                   <span>Atendimento consultivo Sousa-PB</span>
                 </div>
               </div>
@@ -394,7 +394,7 @@ export default function ProductDetailPage() {
         {relatedProducts.length > 0 && (
           <div className="mt-20 pt-12 border-t border-neutral-100">
             <div className="text-center max-w-xl mx-auto mb-10 space-y-1">
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C5A059]">
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#052A97]">
                 Complete o Look
               </span>
               <h2 className="font-editorial text-2xl sm:text-3xl text-neutral-900 font-normal">

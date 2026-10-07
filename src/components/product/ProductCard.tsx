@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -35,8 +35,8 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
   const handleQuickAdd = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    // Adiciona o primeiro tamanho e primeira cor padrão
-    addToCart(product, product.sizes[0], product.colors[0]?.name || 'Padrão', 1);
+    // Adiciona o primeiro tamanho e primeira cor padrÃ£o
+    addToCart(product, product.sizes[0], product.colors[0]?.name || 'PadrÃ£o', 1);
     setAddedQuick(true);
     setTimeout(() => setAddedQuick(false), 1800);
   };
@@ -53,7 +53,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Container de Imagem com Proporção de Moda 3:4 */}
+      {/* Container de Imagem com ProporÃ§Ã£o de Moda 3:4 */}
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#F7F7F5] rounded-none">
         <Link
           href={`/produto/${product.slug}`}
@@ -78,13 +78,13 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             </span>
           )}
           {discountPercent > 0 && (
-            <span className="px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider bg-[#C5A059] text-white">
+            <span className="px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider bg-[#EB1019] text-white">
               -{discountPercent}%
             </span>
           )}
         </div>
 
-        {/* Botão de Wishlist / Favoritos */}
+        {/* BotÃ£o de Wishlist / Favoritos */}
         <button
           onClick={handleToggleFavorite}
           className={`absolute top-2.5 right-2.5 p-2 rounded-full transition-all duration-200 z-10 ${
@@ -96,12 +96,12 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         >
           <Heart
             className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform active:scale-75 ${
-              isFavorited ? 'fill-[#C5A059] text-[#C5A059]' : 'stroke-[1.8]'
+              isFavorited ? 'fill-[#EB1019] text-[#EB1019]' : 'stroke-[1.8]'
             }`}
           />
         </button>
 
-        {/* Ação Rápida no Desktop (Hover) */}
+        {/* AÃ§Ã£o RÃ¡pida no Desktop (Hover) */}
         <div className="hidden lg:block absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
           <button
             onClick={handleQuickAdd}
@@ -116,18 +116,18 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             ) : (
               <>
                 <Plus className="w-4 h-4" />
-                <span>Adicionar Rápido</span>
+                <span>Adicionar RÃ¡pido</span>
               </>
             )}
           </button>
         </div>
       </div>
 
-      {/* Metadados e Informações do Produto (Tipografia Limpa e Editorial) */}
+      {/* Metadados e InformaÃ§Ãµes do Produto (Tipografia Limpa e Editorial) */}
       <div className="pt-3 pb-1 flex flex-col flex-1">
         {/* Marca */}
         <div className="flex items-center justify-between">
-          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] text-[#C5A059]">
+          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] text-[#052A97]">
             {product.brand}
           </span>
           <span className="text-[10px] text-neutral-400 font-medium">
@@ -138,16 +138,16 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         {/* Nome do Produto */}
         <Link
           href={`/produto/${product.slug}`}
-          className="mt-1 text-xs sm:text-sm font-medium text-neutral-100 hover:text-[#d6b35f] transition-colors line-clamp-1"
+          className="mt-1 text-xs sm:text-sm font-medium text-[#141414] hover:text-[#EB1019] transition-colors line-clamp-1"
           title={product.name}
         >
           {product.name}
         </Link>
 
-        {/* Preços e Condições */}
+        {/* PreÃ§os e CondiÃ§Ãµes */}
         <div className="mt-1.5 flex flex-col">
           <div className="flex items-baseline gap-2">
-            <span className="text-sm sm:text-base font-bold text-white tracking-tight">
+            <span className="text-sm sm:text-base font-bold text-[#141414] tracking-tight">
               {formatCurrency(product.price)}
             </span>
             {product.originalPrice && (
@@ -157,7 +157,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             )}
           </div>
 
-          {/* Preço no PIX com desconto sutil */}
+          {/* PreÃ§o no PIX com desconto sutil */}
           <div className="text-[11px] text-emerald-700 font-medium">
             {formatCurrency(pixPrice)} no PIX (5% OFF)
           </div>
@@ -168,11 +168,11 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           </div>
         </div>
 
-        {/* Botão de Adição Rápida no Mobile (Compacto e Acessível) */}
-          <div className="lg:hidden mt-2 pt-2 border-t border-neutral-800">
+        {/* BotÃ£o de AdiÃ§Ã£o RÃ¡pida no Mobile (Compacto e AcessÃ­vel) */}
+          <div className="lg:hidden mt-2 pt-2 border-t border-neutral-200">
           <button
             onClick={handleQuickAdd}
-            className="w-full py-1.5 px-2 bg-neutral-900 text-white rounded text-[11px] font-semibold tracking-wide uppercase flex items-center justify-center gap-1 active:bg-black"
+            className="w-full py-1.5 px-2 bg-[#052A97] text-white rounded text-[11px] font-semibold tracking-wide uppercase flex items-center justify-center gap-1 active:bg-[#051D6F]"
           >
             {addedQuick ? (
               <>

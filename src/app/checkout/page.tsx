@@ -83,10 +83,12 @@ export default function CheckoutPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Chave PIX da loja — preencher quando fornecida pela Mega Toys
+  const PIX_CODE = '';
+
   const copyPixCode = () => {
-    navigator.clipboard.writeText(
-      '00020126580014br.gov.bcb.pix0136siarom-multimarcas-sousa-pb-pix-key5204000053039865802BR5925SIAROM MULTIMARCAS6009SOUSA-PB62070503***6304E8A2'
-    );
+    if (!PIX_CODE) return;
+    navigator.clipboard.writeText(PIX_CODE);
     setCopiedPix(true);
     setTimeout(() => setCopiedPix(false), 2500);
   };
@@ -94,7 +96,7 @@ export default function CheckoutPage() {
   if (cart.length === 0 && step !== 3) {
     return (
       <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4 text-center">
-        <BrandLogo variant="dark" size="md" className="mb-6" />
+        <BrandLogo variant="light" size="md" className="mb-6" />
         <h2 className="text-xl font-bold text-neutral-900 mb-2">
           Sua sacola está vazia
         </h2>
@@ -117,11 +119,11 @@ export default function CheckoutPage() {
       <header className="bg-white border-b border-neutral-200 py-3.5 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <Link href="/" className="inline-flex items-center gap-2">
-            <BrandLogo variant="dark" size="sm" wordmarkTailOnly />
+            <BrandLogo variant="light" size="sm" wordmarkTailOnly />
           </Link>
 
           <div className="flex items-center gap-2 text-xs text-neutral-600 font-medium">
-            <Lock className="w-4 h-4 text-[#C5A059]" />
+            <Lock className="w-4 h-4 text-[#052A97]" />
             <span className="hidden sm:inline">Ambiente Seguro com Criptografia</span>
             <span className="sm:hidden">Checkout Seguro</span>
           </div>
@@ -169,7 +171,7 @@ export default function CheckoutPage() {
             </div>
 
             <div className="space-y-2">
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C5A059]">
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#052A97]">
                 Pedido Registrado com Sucesso
               </span>
               <h2 className="font-editorial text-3xl font-normal text-neutral-900">
@@ -195,17 +197,23 @@ export default function CheckoutPage() {
                 </div>
                 <button
                   onClick={copyPixCode}
-                  className="w-full py-2.5 px-3 bg-black text-white text-xs font-bold uppercase tracking-wider rounded flex items-center justify-center gap-2 hover:bg-neutral-800"
+                  disabled={!PIX_CODE}
+                  className="w-full py-2.5 px-3 bg-black text-white text-xs font-bold uppercase tracking-wider rounded flex items-center justify-center gap-2 hover:bg-neutral-800 disabled:opacity-50 disabled:hover:bg-black"
                 >
                   {copiedPix ? (
                     <>
                       <Check className="w-4 h-4 text-emerald-400" />
                       Código PIX Copiado!
                     </>
-                  ) : (
+                  ) : PIX_CODE ? (
                     <>
                       <Copy className="w-4 h-4" />
                       Copiar Código PIX
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-4 h-4" />
+                      Código PIX em breve
                     </>
                   )}
                 </button>
@@ -218,7 +226,7 @@ export default function CheckoutPage() {
                 Atendimento Personalizado no WhatsApp:
               </p>
               <p>
-                Nosso time da SIAROM MULTIMARCAS em Sousa - PB enviará os detalhes do preparo e envio no seu WhatsApp.
+                Nosso time da MEGA TOYS em Sousa - PB enviará os detalhes do preparo e envio no seu WhatsApp.
               </p>
             </div>
 
@@ -659,7 +667,7 @@ export default function CheckoutPage() {
                     {paymentMethod === 'whatsapp' && (
                       <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-xs space-y-2">
                         <p className="font-semibold text-neutral-900">
-                          Finalização Humanizada com Consultor SIAROM:
+                          Finalização Humanizada com Consultor MEGA TOYS:
                         </p>
                         <p className="text-neutral-600">
                           Ao concluir, abriremos uma conversa no WhatsApp com todos os itens do seu pedido já organizados para você tirar dúvidas ou acertar detalhes de entrega e pagamento diretamente com nossa equipe da loja física em Sousa - PB.
@@ -703,7 +711,7 @@ export default function CheckoutPage() {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <span className="text-[10px] font-bold uppercase text-[#C5A059] block">
+                        <span className="text-[10px] font-bold uppercase text-[#052A97] block">
                           {item.product.brand}
                         </span>
                         <h4 className="text-xs font-medium text-neutral-900 truncate">
@@ -764,11 +772,11 @@ export default function CheckoutPage() {
                 {/* Selos de Segurança */}
                 <div className="pt-3 border-t border-neutral-100 space-y-2 text-[11px] text-neutral-500">
                   <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-[#C5A059]" />
+                    <ShieldCheck className="w-4 h-4 text-[#052A97]" />
                     <span>Transação Criptografada SSL 256-bit</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Truck className="w-4 h-4 text-[#C5A059]" />
+                    <Truck className="w-4 h-4 text-[#052A97]" />
                     <span>Envio com Seguro de Carga Integrado</span>
                   </div>
                 </div>

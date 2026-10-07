@@ -65,7 +65,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="internal-page-shell fixed inset-0 z-50 flex flex-col bg-[#090909]/98 backdrop-blur-lg animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex flex-col bg-white/98 backdrop-blur-lg animate-in fade-in duration-200">
       {/* Header da Busca */}
       <div className="border-b border-neutral-200 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex items-center gap-3">
@@ -107,7 +107,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             {/* Buscas Populares */}
             <div>
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-400 mb-3">
-                <TrendingUp className="w-4 h-4 text-[#C5A059]" />
+                <TrendingUp className="w-4 h-4 text-[#052A97]" />
                 Termos Mais Buscados
               </div>
               <div className="flex flex-wrap gap-2">
@@ -126,15 +126,15 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             {/* Marcas em Destaque */}
             <div>
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-400 mb-3">
-                <Tag className="w-4 h-4 text-[#C5A059]" />
-                Marcas Multimarcas
+                <Tag className="w-4 h-4 text-[#052A97]" />
+                Marcas em Destaque
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                 {popularBrands.map((brand) => (
                   <button
                     key={brand}
                     onClick={() => setQuery(brand)}
-                    className="flex items-center justify-between p-3 rounded-lg border border-neutral-100 bg-neutral-50/50 hover:bg-white hover:border-[#C5A059] transition-all text-left"
+                    className="flex items-center justify-between p-3 rounded-lg border border-neutral-100 bg-neutral-50/50 hover:bg-white hover:border-[#052A97] transition-all text-left"
                   >
                     <span className="text-xs font-semibold tracking-wider text-neutral-900">
                       {brand}
@@ -148,16 +148,16 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             {/* Sugestões de Curadoria */}
             <div className="p-4 rounded-xl bg-[#F7F7F5] border border-neutral-200/70">
               <div className="flex items-center gap-2 text-xs font-bold text-neutral-900 mb-1">
-                <Sparkles className="w-4 h-4 text-[#C5A059]" />
-                Novidades da Semana • SIAROM Sousa-PB
+                <Sparkles className="w-4 h-4 text-[#052A97]" />
+                Novidades da Semana • MEGA TOYS Sousa-PB
               </div>
               <p className="text-xs text-neutral-600 mb-3">
-                Acabamos de receber novas peças exclusivas de alfaiataria, sedas e calçados finos.
+                Acabamos de receber novidades e lançamentos para você e para a criançada.
               </p>
               <Link
                 href="/loja?filtro=novidades"
                 onClick={onClose}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#C5A059] hover:underline"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#052A97] hover:underline"
               >
                 Conferir todos os lançamentos <ArrowRight className="w-3.5 h-3.5" />
               </Link>
@@ -178,7 +178,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 <Link
                   href={`/loja?q=${encodeURIComponent(query)}`}
                   onClick={onClose}
-                  className="text-xs font-bold text-white hover:text-[#C5A059] flex items-center gap-1"
+                  className="text-xs font-bold text-white hover:text-[#052A97] flex items-center gap-1"
                 >
                   Ver todos no catálogo <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
@@ -204,7 +204,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                       />
                     </div>
                     <div className="flex flex-col justify-center min-w-0 flex-1">
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-[#C5A059]">
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-[#052A97]">
                         {product.brand}
                       </span>
                       <h4 className="text-xs font-medium text-neutral-900 truncate group-hover:text-black">

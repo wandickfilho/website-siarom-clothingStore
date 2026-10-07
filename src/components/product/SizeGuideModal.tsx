@@ -23,9 +23,9 @@ export default function SizeGuideModal({ isOpen, onClose, category }: SizeGuideM
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-neutral-100 flex items-center justify-between bg-neutral-50/50">
           <div className="flex items-center gap-2">
-            <Ruler className="w-5 h-5 text-[#C5A059]" />
+            <Ruler className="w-5 h-5 text-[#052A97]" />
             <h3 className="text-sm sm:text-base font-bold uppercase tracking-wider text-neutral-900">
-              Guia de Medidas Oficial SIAROM
+              Guia de Medidas Oficial MEGA TOYS
             </h3>
           </div>
           <button
@@ -49,7 +49,7 @@ export default function SizeGuideModal({ isOpen, onClose, category }: SizeGuideM
           >
             Vestuário / Roupas (cm)
             {activeTab === 'roupas' && (
-              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#C5A059]" />
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#052A97]" />
             )}
           </button>
           <button
@@ -62,7 +62,7 @@ export default function SizeGuideModal({ isOpen, onClose, category }: SizeGuideM
           >
             Calçados (BR)
             {activeTab === 'calcados' && (
-              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#C5A059]" />
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#052A97]" />
             )}
           </button>
         </div>
@@ -122,7 +122,7 @@ export default function SizeGuideModal({ isOpen, onClose, category }: SizeGuideM
 
               <div className="bg-[#F7F7F5] p-3.5 rounded-lg text-xs text-neutral-600 space-y-1">
                 <p className="font-semibold text-neutral-900 flex items-center gap-1">
-                  <Check className="w-3.5 h-3.5 text-[#C5A059]" />
+                  <Check className="w-3.5 h-3.5 text-[#052A97]" />
                   Dica de Caimento:
                 </p>
                 <p>
@@ -207,12 +207,12 @@ export default function SizeGuideModal({ isOpen, onClose, category }: SizeGuideM
         <div className="p-4 border-t border-neutral-100 bg-neutral-50 flex items-center justify-between text-xs">
           <span className="text-neutral-500">Dúvidas com o tamanho?</span>
           <a
-            href="https://wa.me/5583999999999?text=Ol%C3%A1%2C%20estou%20com%20d%C3%BAvida%20sobre%20as%20medidas%20na%20SIAROM"
+            href="https://www.instagram.com/megatoys.sousa"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#C5A059] font-bold hover:underline"
+            className="text-[#052A97] font-bold hover:underline"
           >
-            Consultar especialista no WhatsApp →
+            Consultar a loja no Instagram →
           </a>
         </div>
       </div>

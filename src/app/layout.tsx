@@ -9,26 +9,22 @@ import CartDrawer from '@/components/cart/CartDrawer';
 import InternalPageShell from '@/components/layout/InternalPageShell';
 
 export const metadata: Metadata = {
-  title: 'SIAROM MULTIMARCAS | Moda Contemporânea & Luxo em Sousa - PB',
+  title: 'MEGA TOYS | Brinquedos, Jogos e Presentes em Sousa - PB',
   description:
-    'A loja que vai ficar na sua mente. Curadoria das maiores marcas de moda feminina, masculina, calçados e acessórios em Sousa - PB. Compre online com entrega para todo o Brasil.',
+    'Loja de brinquedos em Sousa - PB. Brinquedos, jogos e presentes para crianças e famílias. Diversão para todas as idades, com entrega para todo o Brasil.',
   keywords: [
-    'Siarom Multimarcas',
-    'Moda Sousa PB',
-    'Roupas de Luxo',
-    'Multimarcas Sousa',
-    'Animale',
-    'Osklen',
-    'Reserva',
-    'Calvin Klein',
-    'Dudalina',
-    'Schutz',
+    'Mega Toys',
+    'Brinquedos Sousa PB',
+    'Loja de Brinquedos',
+    'Presentes Infantis',
+    'Jogos',
+    'Brinquedos em Sousa',
   ],
-  authors: [{ name: 'SIAROM MULTIMARCAS' }],
+  authors: [{ name: 'MEGA TOYS' }],
   openGraph: {
-    title: 'SIAROM MULTIMARCAS | Moda Contemporânea & Luxo',
+    title: 'MEGA TOYS | Brinquedos, Jogos e Presentes',
     description:
-      'A loja que vai ficar na sua mente. Rua Herotildes Serafim dos Santos, 616, Sousa - PB. Novidades toda semana.',
+      'Brinquedos, jogos e presentes para crianças e famílias em Sousa - PB. Novidades toda semana.',
     type: 'website',
   },
 };
@@ -48,7 +44,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#0A0A0A] text-[#F7F4ED] antialiased font-sans-clean selection:bg-[#C5A059] selection:text-black">
+      <body className="min-h-screen flex flex-col bg-white text-[#141414] antialiased font-sans-clean selection:bg-[#052A97] selection:text-white">
         <CartProvider>
           <WishlistProvider>
             {/* Header Desktop & Mobile */}

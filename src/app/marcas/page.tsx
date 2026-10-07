@@ -10,8 +10,8 @@ export default function BrandsPage() {
         
         {/* Header Editorial */}
         <div className="border-b border-neutral-100 pb-8 mb-10 max-w-3xl">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#C5A059] mb-2">
-            <Sparkles className="w-4 h-4 text-[#C5A059]" />
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#052A97] mb-2">
+            <Sparkles className="w-4 h-4 text-[#052A97]" />
             Curadoria Multimarcas Oficial
           </div>
           <h1 className="font-editorial text-3xl sm:text-5xl text-neutral-900 font-normal leading-tight">
@@ -31,7 +31,7 @@ export default function BrandsPage() {
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#C5A059]">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#052A97]">
                     Origem: {brand.origin}
                   </span>
                   <div className="flex items-center gap-1 text-[11px] text-neutral-500 font-medium">
@@ -52,7 +52,7 @@ export default function BrandsPage() {
               <div className="pt-6 mt-6 border-t border-neutral-200 flex items-center justify-between">
                 <Link
                   href={`/loja?marca=${encodeURIComponent(brand.name)}`}
-                  className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-black group-hover:text-[#C5A059] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-black group-hover:text-[#052A97] transition-colors"
                 >
                   <span>Ver Produtos da Marca</span>
                   <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
