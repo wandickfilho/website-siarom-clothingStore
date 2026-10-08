@@ -7,13 +7,12 @@ export interface BrandItem {
 }
 
 export const BRANDS: BrandItem[] = [
-  { id: 'animale', name: 'ANIMALE', tagline: 'Sofisticação brasileira e alfaiataria magnética', origin: 'Brasil', featured: true },
-  { id: 'osklen', name: 'OSKLEN', tagline: 'Luxo sustentável, linho puro e minimalismo orgânico', origin: 'Rio de Janeiro', featured: true },
-  { id: 'reserva', name: 'RESERVA', tagline: 'Elegância contemporânea com o mais puro algodão Pima', origin: 'Brasil', featured: true },
-  { id: 'calvin-klein', name: 'CALVIN KLEIN', tagline: 'Design icônico nova-iorquino, precisão e sobriedade', origin: 'New York', featured: true },
-  { id: 'dudalina', name: 'DUDALINA', tagline: 'A mais alta camisaria em sedas e algodões nobres', origin: 'Brasil', featured: true },
-  { id: 'schutz', name: 'SCHUTZ', tagline: 'Calçados autorais para mulheres de atitude e estilo', origin: 'Brasil', featured: true },
-  { id: 'tommy', name: 'TOMMY HILFIGER', tagline: 'Clássico americano revisitado com frescor e exclusividade', origin: 'USA', featured: true },
-  { id: 'arezzo', name: 'AREZZO', tagline: 'Couros nobres, bolsas e acessórios de impacto', origin: 'Brasil', featured: true },
+  { id: 'lego', name: 'LEGO', tagline: 'Blocos que viram qualquer coisa que a imaginação criar', origin: 'Dinamarca', featured: true },
+  { id: 'hot-wheels', name: 'HOT WHEELS', tagline: 'Carrinhos, pistas e velocidade para quem brinca sério', origin: 'EUA', featured: true },
+  { id: 'barbie', name: 'BARBIE', tagline: 'Bonecas e mundos inteiros para inventar histórias', origin: 'EUA', featured: true },
+  { id: 'fisher-price', name: 'FISHER-PRICE', tagline: 'Brincar desde os primeiros passos com segurança', origin: 'EUA', featured: true },
+  { id: 'hasbro', name: 'HASBRO', tagline: 'Jogos e brinquedos que juntam a família na mesa', origin: 'EUA', featured: true },
+  { id: 'bandai', name: 'BANDAI', tagline: 'Personagens, figuras e colecionáveis para fãs', origin: 'Japão', featured: true },
+  { id: 'mattel', name: 'MATTEL', tagline: 'Diversão clássica para todas as idades', origin: 'EUA', featured: true },
+  { id: 'caloi', name: 'CALOI', tagline: 'Bicicletas brasileiras que acompanham gerações', origin: 'Brasil', featured: true },
 ];
-

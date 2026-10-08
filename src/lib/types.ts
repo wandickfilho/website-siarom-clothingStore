@@ -3,7 +3,7 @@ export interface Product {
   name: string;
   slug: string;
   brand: string;
-  category: 'feminino' | 'masculino' | 'calcados' | 'acessorios';
+  category: 'veiculos' | 'bonecas' | 'pelucias' | 'educativos';
   price: number;
   originalPrice?: number;
   pixDiscountPercent: number; // e.g. 5% off on PIX

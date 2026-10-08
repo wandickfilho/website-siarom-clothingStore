@@ -4,8 +4,9 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Search, Heart, ShoppingBag, User, Menu, X, ChevronRight, Sparkles, MapPin } from 'lucide-react';
+import { Search, Heart, ShoppingBag, User, Menu, X, ChevronRight, Sparkles, MapPin, Phone } from 'lucide-react';
 import BrandLogo from './BrandLogo';
+import CategoryBar from './CategoryBar';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import SearchModal from '../search/SearchModal';
@@ -32,14 +33,31 @@ export default function Header() {
   }, [pathname]);
 
   const navLinks = [
-    { label: 'Feminino', href: '/loja?categoria=feminino' },
-    { label: 'Masculino', href: '/loja?categoria=masculino' },
-    { label: 'Calçados', href: '/loja?categoria=calcados' },
-    { label: 'Acessórios', href: '/loja?categoria=acessorios' },
+    { label: 'Veículos', href: '/loja?categoria=veiculos' },
+    { label: 'Bonecas & Bebês', href: '/loja?categoria=bonecas' },
+    { label: 'Pelúcias', href: '/loja?categoria=pelucias' },
+    { label: 'Jogos & Educativos', href: '/loja?categoria=educativos' },
     { label: 'Novidades', href: '/loja?filtro=novidades', highlight: true },
     { label: 'Marcas', href: '/marcas' },
     { label: 'Ofertas', href: '/loja?filtro=ofertas', badge: 'OFF' },
   ];
+
+  const searchTrigger = (
+    <button
+      onClick={() => setIsSearchOpen(true)}
+      className="group flex w-full items-center gap-3 rounded-full border border-neutral-300 bg-neutral-50 py-2.5 pl-4 pr-2 text-left transition duration-200 hover:border-[#052A97]/40 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#052A97]/40"
+      aria-label="Buscar produtos"
+      title="Buscar produtos"
+    >
+      <Search className="h-4 w-4 shrink-0 text-neutral-500 transition-colors group-hover:text-[#052A97]" />
+      <span className="min-w-0 flex-1 truncate text-sm text-neutral-500 transition-colors group-hover:text-neutral-700">
+        O que você está procurando?
+      </span>
+      <span className="hidden shrink-0 items-center gap-1.5 rounded-full bg-[#052A97] px-4 py-2 text-[11px] font-bold tracking-wide text-white transition-colors duration-200 group-hover:bg-[#051D6F] sm:inline-flex">
+        Buscar
+      </span>
+    </button>
+  );
 
   return (
     <>
@@ -56,15 +74,21 @@ export default function Header() {
           </div>
 
           <div className="hidden md:flex items-center gap-4 text-white/90">
-            <span>✨ NOVIDADES TODA SEMANA</span>
+            <span>SEG A SEX 08H às 17H30 · SÁB 08H às 13H</span>
             <span className="text-white/40">|</span>
             <span>FRETE GRÁTIS ACIMA DE R$ 499</span>
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="text-[#FBCC0F] flex items-center gap-1 font-semibold">
-              Atendimento via WhatsApp
-            </span>
+            <a
+              href="https://wa.me/5583993250859"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#FBCC0F] flex items-center gap-1 font-semibold hover:underline"
+            >
+              <Phone className="w-3 h-3" />
+              WhatsApp (83) 99325-0859
+            </a>
           </div>
         </div>
       </div>
@@ -78,10 +102,10 @@ export default function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
 
             {/* Mobile Menu Button */}
-            <div className="flex items-center lg:hidden">
+            <div className="flex shrink-0 items-center lg:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
                 className="p-2 -ml-2 text-neutral-700 hover:text-[#052A97] focus:outline-none"
@@ -96,64 +120,26 @@ export default function Header() {
               <Link
                 href="/"
                 aria-label="Mega Toys - Início"
-                className="flex shrink-0 items-center justify-center"
+                className="logo-anim flex shrink-0 items-center justify-center"
               >
                 <Image
                   src="/imagens/logo_megaToys.png"
                   alt="Mega Toys"
                   width={500}
                   height={500}
-                  className="h-20 w-20 object-contain sm:h-24 sm:w-24"
+                  className="h-16 w-16 object-contain lg:h-20 lg:w-20 logo-pop"
                   priority
                 />
               </Link>
             </div>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center space-x-7 text-[13px] font-medium tracking-wide uppercase">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className={`relative py-1 transition-colors ${
-                      isActive
-                        ? 'text-[#051D6F] font-semibold'
-                        : link.highlight
-                        ? 'text-[#EB1019] font-semibold hover:text-[#c40d15]'
-                        : 'text-neutral-600 hover:text-[#051D6F]'
-                    }`}
-                  >
-                    {link.label}
-                    {link.badge && (
-                      <span className="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-[#EB1019] text-white font-bold tracking-tighter">
-                        {link.badge}
-                      </span>
-                    )}
-                    {isActive && (
-                      <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#EB1019]" />
-                    )}
-                  </Link>
-                );
-              })}
-            </nav>
+            {/* Barra de Pesquisa (Desktop / Tablet) */}
+            <div className="hidden flex-1 justify-center px-2 md:flex">
+              <div className="w-full max-w-2xl">{searchTrigger}</div>
+            </div>
 
-            {/* Actions: Search, Wishlist, Account, Cart */}
-            <div className="flex items-center space-x-3 sm:space-x-4">
-              {/* Search Trigger */}
-              <button
-                onClick={() => setIsSearchOpen(true)}
-                className="flex items-center gap-2 p-2 text-neutral-700 hover:text-[#052A97] transition-colors rounded-full hover:bg-neutral-100 focus:outline-none"
-                aria-label="Buscar produtos"
-                title="Buscar produtos"
-              >
-                <Search className="w-5 h-5 stroke-[1.75]" />
-                <span className="hidden xl:inline text-xs text-neutral-500 font-normal">
-                  Buscar produto ou marca...
-                </span>
-              </button>
-
+            {/* Actions: Wishlist, Account, Cart */}
+            <div className="ml-auto flex items-center space-x-2 sm:space-x-3 md:ml-0">
               {/* Wishlist */}
               <Link
                 href="/favoritos"
@@ -192,8 +178,14 @@ export default function Header() {
               </button>
             </div>
           </div>
+
+          {/* Barra de Pesquisa (Mobile) */}
+          <div className="pt-3 pb-1 md:hidden">{searchTrigger}</div>
         </div>
       </header>
+
+      {/* Barra de Categorias com Ícones */}
+      <CategoryBar />
 
       {/* Mobile Menu Drawer */}
       {isMobileMenuOpen && (
@@ -248,13 +240,21 @@ export default function Header() {
                 <div className="text-[11px] font-bold uppercase tracking-widest text-neutral-500 mb-2 px-2">
                   Atendimento & Loja Física
                 </div>
-                <div className="p-3 bg-neutral-50 rounded-xl space-y-2 text-xs text-neutral-600 border border-neutral-200">
+                <div className="p-3 bg-neutral-50 rounded-xl space-y-1.5 text-xs text-neutral-600 border border-neutral-200">
                   <p className="font-semibold text-[#051D6F] flex items-center gap-1.5">
                     <MapPin className="w-3.5 h-3.5 text-[#EB1019]" />
-                    MEGA TOYS
+                    Rua Coronel José Vicente, 52 — Centro
                   </p>
-                  <p>Sousa - PB</p>
-                  <p className="text-neutral-500">Atendimento via WhatsApp</p>
+                  <p>Sousa - PB · Seg a sex 08h às 17h30 · Sáb 08h às 13h</p>
+                  <a
+                    href="https://wa.me/5583993250859"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 font-semibold text-[#052A97] hover:text-[#EB1019] transition-colors"
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                    WhatsApp (83) 99325-0859
+                  </a>
                 </div>
               </div>
             </div>

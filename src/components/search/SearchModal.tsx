@@ -19,17 +19,17 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const popularSearches = [
-    'Vestido Midi',
-    'Blazer Linho',
-    'Camisa Pima',
-    'Scarpin Salto',
-    'Bolsa Couro',
-    'Animale',
-    'Osklen',
-    'Reserva',
+    'Urso de Pelúcia',
+    'Carrinho',
+    'Blocos de Montar',
+    'Bicicleta Infantil',
+    'Jogo de Tabuleiro',
+    'Quebra-Cabeça',
+    'Robô',
+    'Patinete',
   ];
 
-  const popularBrands = ['ANIMALE', 'OSKLEN', 'RESERVA', 'CALVIN KLEIN', 'SCHUTZ', 'DUDALINA'];
+  const popularBrands = ['LEGO', 'HOT WHEELS', 'BARBIE', 'FISHER-PRICE', 'HASBRO', 'BANDAI'];
 
   useEffect(() => {
     if (isOpen) {
@@ -76,7 +76,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Busque por produto, marca ou categoria (ex: Vestido, Linho, Animale)..."
+            placeholder="Busque por produto, marca ou categoria (ex: Pelúcia, Carrinho, LEGO)..."
             className="flex-1 text-base sm:text-lg font-medium text-neutral-900 placeholder:text-neutral-400 focus:outline-none bg-transparent"
           />
 
@@ -221,7 +221,9 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                         )}
                       </div>
                       <span className="text-[10px] text-neutral-500 mt-0.5">
-                        {product.sizes.length} tamanhos disp.
+                        {product.sizes.length > 1
+                          ? `${product.sizes.length} tamanhos disp.`
+                          : 'Tamanho único'}
                       </span>
                     </div>
                   </Link>
@@ -233,7 +235,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                   Não encontramos produtos para &quot;{query}&quot;
                 </p>
                 <p className="text-xs">
-                  Tente buscar por termos mais genéricos como &ldquo;vestido&rdquo;, &ldquo;camisa&rdquo;, &ldquo;linho&rdquo; ou a marca desejada.
+                  Tente buscar por termos mais genéricos como &ldquo;pelúcia&rdquo;, &ldquo;carrinho&rdquo;, &ldquo;jogo&rdquo; ou a marca desejada.
                 </p>
               </div>
             )}

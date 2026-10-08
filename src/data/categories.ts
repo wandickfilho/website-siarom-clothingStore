@@ -4,41 +4,52 @@ export interface CategoryItem {
   slug: string;
   subtitle: string;
   image: string;
+  /** Presente somente quando há vídeo real correspondente em videos_stories. */
+  video?: string;
   count: number;
 }
 
 export const CATEGORIES: CategoryItem[] = [
   {
-    id: 'fem',
-    name: 'Feminino',
-    slug: 'feminino',
-    subtitle: 'Vestidos, Alfaiataria & Seda',
-    image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80',
+    id: 'veic',
+    name: 'Veículos & Aventura',
+    slug: 'veiculos',
+    subtitle: 'Carrinhos, trens, bicicletas e patinetes',
+    image: '/imagens/produtos/carrinho.jpg',
+    video: '/videos/videos_stories/brinquedo_carrinho&boneca.mp4',
+    count: 42,
+  },
+  {
+    id: 'bone',
+    name: 'Bonecas & Bebês',
+    slug: 'bonecas',
+    subtitle: 'Bonecas, fantoches e brinquedos de banho',
+    image: '/imagens/produtos/boneca.jpg',
+    video: '/videos/videos_stories/brinquedo_boneca.mp4',
+    count: 31,
+  },
+  {
+    id: 'pelu',
+    name: 'Pelúcias & Personagens',
+    slug: 'pelucias',
+    subtitle: 'Ursos, dinossauros e heróis do dia a dia',
+    image: '/imagens/produtos/pelucia.jpg',
+    count: 27,
+  },
+  {
+    id: 'educ',
+    name: 'Jogos & Educativos',
+    slug: 'educativos',
+    subtitle: 'Jogos, blocos, quebra-cabeças e robôs',
+    image: '/imagens/produtos/jogo.jpg',
+    video: '/videos/videos_stories/brinquedo_quebraCabeca.mp4',
     count: 48,
-  },
-  {
-    id: 'masc',
-    name: 'Masculino',
-    slug: 'masculino',
-    subtitle: 'Blazers, Linho & Algodão Pima',
-    image: 'https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=800&q=80',
-    count: 52,
-  },
-  {
-    id: 'calc',
-    name: 'Calçados',
-    slug: 'calcados',
-    subtitle: 'Couro Nobre, Scarpins & Sneakers',
-    image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80',
-    count: 36,
-  },
-  {
-    id: 'acess',
-    name: 'Acessórios',
-    slug: 'acessorios',
-    subtitle: 'Bolsas, Cintos & Detalhes Ouro',
-    image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80',
-    count: 29,
   },
 ];
 
+export const CATEGORY_LABELS: Record<string, string> = {
+  veiculos: 'Veículos & Aventura',
+  bonecas: 'Bonecas & Bebês',
+  pelucias: 'Pelúcias & Personagens',
+  educativos: 'Jogos & Educativos',
+};

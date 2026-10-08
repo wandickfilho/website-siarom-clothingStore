@@ -8,7 +8,6 @@ import {
   Heart,
   ShoppingBag,
   Star,
-  Ruler,
   Truck,
   ShieldCheck,
   RefreshCw,
@@ -22,7 +21,6 @@ import { PRODUCTS } from '@/data/products';
 import { formatCurrency, calculateInstallments, calculatePixPrice } from '@/lib/utils';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
-import SizeGuideModal from '@/components/product/SizeGuideModal';
 import ProductCard from '@/components/product/ProductCard';
 
 export default function ProductDetailPage() {
@@ -36,9 +34,8 @@ export default function ProductDetailPage() {
   ).slice(0, 4);
 
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [selectedSize, setSelectedSize] = useState(product.sizes[0] || 'M');
+  const [selectedSize, setSelectedSize] = useState(product.sizes[0] || 'Único');
   const [selectedColor, setSelectedColor] = useState(product.colors[0]?.name || 'Padrão');
-  const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
   const [cepInput, setCepInput] = useState('');
   const [shippingCalculated, setShippingCalculated] = useState(false);
   const [addedSuccess, setAddedSuccess] = useState(false);
@@ -244,20 +241,18 @@ export default function ProductDetailPage() {
               </div>
             </div>
 
-            {/* Seleção de Tamanhos com Guia de Medidas */}
+            {/* Seleção de Tamanho */}
             <div className="space-y-2.5">
               <div className="flex items-center justify-between text-xs">
                 <span className="font-bold uppercase tracking-wider text-neutral-800">
                   Tamanho: <span className="font-normal text-neutral-600">{selectedSize}</span>
                 </span>
 
-                <button
-                  onClick={() => setIsSizeGuideOpen(true)}
-                  className="flex items-center gap-1 text-[#052A97] hover:text-[#051D6F] font-semibold transition-colors"
-                >
-                  <Ruler className="w-3.5 h-3.5" />
-                  <span>Tabela de Medidas (cm)</span>
-                </button>
+                <span className="text-[11px] text-neutral-400">
+                  {product.sizes.length > 1
+                    ? `${product.sizes.length} opções disponíveis`
+                    : 'Brinquedo em tamanho único'}
+                </span>
               </div>
 
               <div className="grid grid-cols-4 gap-2">
@@ -395,7 +390,7 @@ export default function ProductDetailPage() {
           <div className="mt-20 pt-12 border-t border-neutral-100">
             <div className="text-center max-w-xl mx-auto mb-10 space-y-1">
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#052A97]">
-                Complete o Look
+                Continue explorando
               </span>
               <h2 className="font-editorial text-2xl sm:text-3xl text-neutral-900 font-normal">
                 Você Também Pode Gostar
@@ -411,13 +406,6 @@ export default function ProductDetailPage() {
         )}
 
       </div>
-
-      {/* Modal de Guia de Medidas */}
-      <SizeGuideModal
-        isOpen={isSizeGuideOpen}
-        onClose={() => setIsSizeGuideOpen(false)}
-        category={product.category}
-      />
     </div>
   );
 }

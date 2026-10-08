@@ -108,7 +108,7 @@ export default function CartDrawer() {
                     Sua sacola está vazia
                   </h3>
                   <p className="text-xs text-neutral-500 max-w-xs">
-                    Explore nossos lançamentos de moda contemporânea e adicione suas peças favoritas.
+                    Explore nossos brinquedos, jogos e presentes em destaque e adicione seus favoritos à sacola.
                   </p>
                 </div>
                 <button

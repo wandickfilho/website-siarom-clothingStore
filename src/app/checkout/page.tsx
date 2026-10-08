@@ -76,7 +76,7 @@ export default function CheckoutPage() {
   };
 
   const handleFinishOrder = () => {
-    const generatedOrder = `SIA-${Math.floor(100000 + Math.random() * 900000)}`;
+    const generatedOrder = `MT-${Math.floor(100000 + Math.random() * 900000)}`;
     setOrderNumber(generatedOrder);
     setStep(3);
     clearCart();

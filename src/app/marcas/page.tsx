@@ -15,10 +15,10 @@ export default function BrandsPage() {
             Curadoria Multimarcas Oficial
           </div>
           <h1 className="font-editorial text-3xl sm:text-5xl text-neutral-900 font-normal leading-tight">
-            Marcas Parceiras & Grifes Autorizadas
+            Marcas Parceiras &amp; Linhas Autorizadas
           </h1>
           <p className="text-xs sm:text-sm text-neutral-600 mt-3 leading-relaxed">
-            Reunimos as marcas que são referência de moda, design e sustentabilidade. Cada parceiro é selecionado rigorosamente pelo nosso comitê de estilo em Sousa - PB.
+            Reunimos as marcas de brinquedos mais reconhecidas pelas famílias. Cada parceiro é selecionado por segurança, qualidade e diversão garantidas em Sousa - PB.
           </p>
         </div>
 

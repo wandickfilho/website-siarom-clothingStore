@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check, MapPin, Sparkles } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Sparkles } from 'lucide-react';
 
 const slides = [
   { badge: 'Novidades toda semana', paragraph: true, promo: true },
@@ -76,9 +76,6 @@ export default function HeroCampaign() {
                   Ver novidades
                 </Link>
               </div>
-              <div className="mt-10 flex items-center gap-2 text-xs text-neutral-500">
-                <MapPin className="h-4 w-4 text-[#EB1019]" /> Sousa — PB
-              </div>
             </div>
           </div>
         </div>
@@ -132,9 +129,6 @@ export default function HeroCampaign() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="relative border-y border-[#052A97]/15 bg-[#052A97] px-4 py-4 sm:px-10 lg:px-16">
-        <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-x-8 gap-y-2 text-[9px] font-bold uppercase tracking-[.18em] text-white/85 sm:justify-between"><span>Diversão para todas as idades</span><span className="text-[#FBCC0F]">Presentes que encantam</span><span>Atendimento em Sousa e online</span></div>
       </div>
     </section>
   );

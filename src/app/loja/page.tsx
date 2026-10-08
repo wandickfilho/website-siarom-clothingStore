@@ -7,6 +7,12 @@ import { SlidersHorizontal, ChevronDown, X, Check, ArrowUpDown } from 'lucide-re
 import { PRODUCTS } from '@/data/products';
 import { BRANDS } from '@/data/brands';
 import ProductCard from '@/components/product/ProductCard';
+import { CATEGORY_LABELS } from '@/data/categories';
+
+const DEPARTMENTS = [
+  { label: 'Todos os Produtos', value: 'todos' },
+  ...Object.entries(CATEGORY_LABELS).map(([value, label]) => ({ label, value })),
+];
 
 function StoreContent() {
   const searchParams = useSearchParams();
@@ -22,8 +28,6 @@ function StoreContent() {
   const [onlyDiscount, setOnlyDiscount] = useState(initialFilter === 'ofertas');
   const [sortBy, setSortBy] = useState<'relevance' | 'newest' | 'price-asc' | 'price-desc'>('relevance');
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
-
-  const allSizes = ['PP', 'P', 'M', 'G', 'GG', '35', '36', '37', '38', '39', '40', '41', '42'];
 
   // Produtos Filtrados e Ordenados
   const filteredProducts = useMemo(() => {
@@ -78,10 +82,7 @@ function StoreContent() {
 
   const getCategoryTitle = () => {
     if (initialQuery) return `Resultados para "${initialQuery}"`;
-    if (selectedCategory === 'feminino') return 'Moda Feminina';
-    if (selectedCategory === 'masculino') return 'Moda Masculina';
-    if (selectedCategory === 'calcados') return 'Calçados & Couros';
-    if (selectedCategory === 'acessorios') return 'Bolsas & Acessórios';
+    if (CATEGORY_LABELS[selectedCategory]) return CATEGORY_LABELS[selectedCategory];
     if (selectedBrand !== 'todas') return `Coleção ${selectedBrand.toUpperCase()}`;
     if (onlyDiscount) return 'Seleção Especial em Oferta';
     return 'Catálogo Completo';
@@ -119,7 +120,7 @@ function StoreContent() {
                 {getCategoryTitle()}
               </h1>
               <p className="text-xs sm:text-sm text-neutral-500 max-w-xl mt-2 leading-relaxed">
-                Design atemporal, matérias-primas nobres e alfaiataria contemporânea com disponibilidade imediata na loja física de Sousa - PB e entrega rápida para todo o Brasil.
+                Brinquedos, jogos e presentes escolhidos com cuidado para cada idade, com disponibilidade imediata na loja física de Sousa - PB e entrega rápida para todo o Brasil.
               </p>
             </div>
 
@@ -153,7 +154,7 @@ function StoreContent() {
             </span>
             {selectedCategory !== 'todos' && (
               <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-neutral-100 rounded-full text-neutral-800 text-[11px]">
-                Categoria: {selectedCategory}
+                Categoria: {CATEGORY_LABELS[selectedCategory] ?? selectedCategory}
                 <button onClick={() => setSelectedCategory('todos')} className="hover:text-rose-500">
                   <X className="w-3 h-3" />
                 </button>
@@ -225,13 +226,7 @@ function StoreContent() {
                 Departamentos
               </h3>
               <ul className="space-y-2 text-xs">
-                {[
-                  { label: 'Todos os Produtos', value: 'todos' },
-                  { label: 'Feminino', value: 'feminino' },
-                  { label: 'Masculino', value: 'masculino' },
-                  { label: 'Calçados', value: 'calcados' },
-                  { label: 'Acessórios', value: 'acessorios' },
-                ].map((item) => (
+                {DEPARTMENTS.map((item) => (
                   <li key={item.value}>
                     <button
                       onClick={() => setSelectedCategory(item.value)}
@@ -285,12 +280,12 @@ function StoreContent() {
               </div>
             </div>
 
-            {/* Tamanhos */}
+            {/* Tamanho */}
             <div className="space-y-3 pt-6 border-t border-neutral-100">
               <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">
-                Tamanhos
+                Tamanho
               </h3>
-              <div className="grid grid-cols-4 gap-1.5">
+              <div className="flex flex-wrap gap-1.5">
                 <button
                   onClick={() => setSelectedSize('todos')}
                   className={`py-1.5 text-center text-xs border rounded transition-colors ${
@@ -301,7 +296,7 @@ function StoreContent() {
                 >
                   Todos
                 </button>
-                {['PP', 'P', 'M', 'G', 'GG', '36', '38', '40', '42'].map((s) => (
+                {['Único'].map((s) => (
                   <button
                     key={s}
                     onClick={() => setSelectedSize(s)}
@@ -390,15 +385,15 @@ function StoreContent() {
                   Departamentos
                 </h4>
                 <div className="space-y-1 text-xs">
-                  {['todos', 'feminino', 'masculino', 'calcados', 'acessorios'].map((cat) => (
+                  {DEPARTMENTS.map(({ label, value }) => (
                     <button
-                      key={cat}
-                      onClick={() => setSelectedCategory(cat)}
-                      className={`block w-full text-left py-1.5 capitalize ${
-                        selectedCategory === cat ? 'font-bold text-black' : 'text-neutral-600'
+                      key={value}
+                      onClick={() => setSelectedCategory(value)}
+                      className={`block w-full text-left py-1.5 ${
+                        selectedCategory === value ? 'font-bold text-black' : 'text-neutral-600'
                       }`}
                     >
-                      {cat === 'todos' ? 'Todos os Departamentos' : cat}
+                      {label}
                     </button>
                   ))}
                 </div>

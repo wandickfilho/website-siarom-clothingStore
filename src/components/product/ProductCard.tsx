@@ -8,13 +8,16 @@ import { Product } from '@/lib/types';
 import { formatCurrency, calculateInstallments, calculatePixPrice } from '@/lib/utils';
 import { useWishlist } from '@/context/WishlistContext';
 import { useCart } from '@/context/CartContext';
+import LazyVideo from '@/components/ui/LazyVideo';
 
 interface ProductCardProps {
   product: Product;
   priority?: boolean;
+  /** Vídeo opcional de fundo (usado apenas na Home quando há correspondência real). */
+  videoSrc?: string;
 }
 
-export default function ProductCard({ product, priority = false }: ProductCardProps) {
+export default function ProductCard({ product, priority = false, videoSrc }: ProductCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [addedQuick, setAddedQuick] = useState(false);
   const { isInWishlist, toggleWishlist } = useWishlist();
@@ -53,8 +56,8 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Container de Imagem com ProporÃ§Ã£o de Moda 3:4 */}
-      <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#F7F7F5] rounded-none">
+      {/* Container de Imagem com Proporção 4:3 para fotos de brinquedos */}
+      <div className="relative aspect-[4/3.1] w-full overflow-hidden bg-[#F7F7F5] rounded-none">
         <Link
           href={`/produto/${product.slug}`}
           className="block w-full h-full relative"
@@ -66,8 +69,9 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             fill
             priority={priority}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+            className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
           />
+          {videoSrc && <LazyVideo src={videoSrc} />}
         </Link>
 
         {/* Badges Flutuantes Discretas */}

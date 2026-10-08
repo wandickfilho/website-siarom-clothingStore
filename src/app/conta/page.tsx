@@ -10,21 +10,21 @@ export default function AccountPage() {
 
   const mockOrders = [
     {
-      id: 'SIA-842910',
+      id: 'MT-842910',
       date: '10/09/2026',
       status: 'Em Transporte',
       step: 3,
-      items: 'Vestido Midi Alfaiataria (Preto / M)',
-      total: 'R$ 689,00',
+      items: 'Trem Elétrico Festivo com Trilhos',
+      total: 'R$ 289,90',
       destination: 'Sousa - PB (Retirada Loja)',
     },
     {
-      id: 'SIA-781203',
+      id: 'MT-781203',
       date: '28/08/2026',
       status: 'Entregue',
       step: 4,
-      items: 'Blazer Slim Linho + Camisa Pima',
-      total: 'R$ 1.239,00',
+      items: 'Boneca Articulada com Visuais Trocáveis + Kit Patinhos de Banho',
+      total: 'R$ 164,80',
       destination: 'João Pessoa - PB',
     },
   ];
@@ -65,7 +65,7 @@ export default function AccountPage() {
           </div>
 
           <a
-            href="https://wa.me/5583999999999"
+            href="https://wa.me/5583993250859"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-neutral-100 text-neutral-800 text-xs font-semibold rounded-lg hover:bg-neutral-200 transition-colors"
@@ -83,7 +83,7 @@ export default function AccountPage() {
           <form onSubmit={handleTrack} className="flex gap-2">
             <input
               type="text"
-              placeholder="Digite o código (ex: SIA-842910)..."
+              placeholder="Digite o código (ex: MT-842910)..."
               value={trackingCode}
               onChange={(e) => setTrackingCode(e.target.value)}
               className="flex-1 px-3.5 py-2 text-xs bg-white border border-neutral-300 rounded focus:border-black focus:outline-none uppercase font-mono"

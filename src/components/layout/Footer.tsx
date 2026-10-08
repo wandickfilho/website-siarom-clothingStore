@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { MapPin, Phone, Mail, ShieldCheck, CreditCard, RefreshCw, Truck } from 'lucide-react';
+import { MapPin, Phone, Clock, ShieldCheck, CreditCard, RefreshCw, Truck } from 'lucide-react';
 import BrandLogo from './BrandLogo';
 import InstagramIcon from '@/components/ui/InstagramIcon';
 
@@ -86,15 +86,26 @@ export default function Footer() {
             <div className="space-y-2 pt-2 text-xs text-neutral-600">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#EB1019] flex-shrink-0 mt-0.5" />
-                <span>Sousa - PB</span>
+                <span>Rua Coronel José Vicente, 52 — Centro<br />Sousa - PB</span>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <Clock className="w-4 h-4 text-[#EB1019] flex-shrink-0 mt-0.5" />
+                <span>
+                  Seg a sex 08h às 17h30<br />
+                  Sábado 08h às 13h<br />
+                  Domingo fechado
+                </span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#EB1019] flex-shrink-0" />
-                <span>Atendimento via WhatsApp</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#EB1019] flex-shrink-0" />
-                <span>Contato pelo Instagram ou WhatsApp</span>
+                <a
+                  href="https://wa.me/5583993250859"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#EB1019] transition-colors font-medium"
+                >
+                  WhatsApp (83) 99325-0859
+                </a>
               </div>
             </div>
 
@@ -118,23 +129,23 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-neutral-500">
               <li>
-                <Link href="/loja?categoria=feminino" className="hover:text-[#EB1019] transition-colors">
-                  Moda Feminina
+                <Link href="/loja?categoria=veiculos" className="hover:text-[#EB1019] transition-colors">
+                  Veículos & Aventura
                 </Link>
               </li>
               <li>
-                <Link href="/loja?categoria=masculino" className="hover:text-[#EB1019] transition-colors">
-                  Moda Masculina
+                <Link href="/loja?categoria=bonecas" className="hover:text-[#EB1019] transition-colors">
+                  Bonecas & Bebês
                 </Link>
               </li>
               <li>
-                <Link href="/loja?categoria=calcados" className="hover:text-[#EB1019] transition-colors">
-                  Calçados & Couros
+                <Link href="/loja?categoria=pelucias" className="hover:text-[#EB1019] transition-colors">
+                  Pelúcias & Personagens
                 </Link>
               </li>
               <li>
-                <Link href="/loja?categoria=acessorios" className="hover:text-[#EB1019] transition-colors">
-                  Bolsas & Acessórios
+                <Link href="/loja?categoria=educativos" className="hover:text-[#EB1019] transition-colors">
+                  Jogos & Educativos
                 </Link>
               </li>
               <li>
